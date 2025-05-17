@@ -279,6 +279,18 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          占个坑
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
   <h1 class="title is-1 PlanGPT">
@@ -287,8 +299,17 @@
   </div>
 </section>
 
-
-
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          占个坑
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
@@ -322,7 +343,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 3:</b> 方元问问 Architecture.
+                    <b>Figure 4:</b> 方元问问 Architecture.
                 </font>
               </p>
             </figcaption>
@@ -337,6 +358,18 @@
   <h1 class="title is-1 PlanGPT">
     <span class="PlanGPT" style="vertical-align: middle">上海量子城市</span>
   </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          占个坑
+        </h2>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -391,7 +424,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 4:</b> FANNO Architecture.
+                    <b>Figure 5:</b> FANNO Architecture.
                 </font>
               </p>
             </figcaption>
@@ -437,7 +470,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 5:</b> Tag-Instruct Architecture.
+                    <b>Figure 6:</b> Tag-Instruct Architecture.
                 </font>
               </p>
             </figcaption>
@@ -496,7 +529,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 4:</b> GridPE Architecture.
+                    <b>Figure 7:</b> GridPE Architecture.
                 </font>
               </p>
             </figcaption>
@@ -518,12 +551,19 @@
 
 <div class="container mt-6">
   <div class="content">
-    <!-- 英文版（默认显示） -->
-    <h2 class="title is-4">Acknowledgements</h2>
-    <p><strong>Data Annotators</strong> Yijie Deng, Siqi Zha, Fenghong An, Hanying Li, Chuang Deng</p>
-    <br>
+    <h2 class="title is-4">致谢</h2>
+    <div class="thanks-content">
+      <div class="thanks-text">
+        <p><strong>BSAI-同济：</strong> 安枫泓，查思齐，邓闯，李瀚滢，付叶扬，李瀚滢，范佳挹，于佳璐，郭瑛琦</p>
+        <p><strong>BSAI-北大：</strong> 朱赫，陈旻歆，邓奕杰，苏军又，王稳</p>
+      </div>
+      <div class="thanks-image">
+        <img src="./pictures/BSAI.png" alt="Teaser">
+      </div>
+    </div>
   </div>
 </div>
+
 
 <!-- @PAN TODO: bibtex -->
 <!-- <section class="section" id="BibTeX">
@@ -624,6 +664,22 @@
   }
 
   td:hover {background-color: #ffffff;}
+
+  .thanks-content {
+    display: flex;
+    justify-content: space-between; /* 将文字和图片分开 */
+    align-items: center; /* 垂直居中对齐文字和图片 */
+  }
+
+  .thanks-text {
+    max-width: calc(100% - 170px); /* 确保文字占据除图片外的空间 */
+  }
+
+  .thanks-image img {
+    width: 400px; /* 设置图片宽度 */
+    height: auto; /* 保持图片的纵横比 */
+  }
+
 </style>
 </body>
 </html>
