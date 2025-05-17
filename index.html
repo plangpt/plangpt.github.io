@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PlanVLM-bench</title>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Multimodal Multi-image Understanding for Evaluating Multimodal Large Language Models">
+  <meta name="keywords" content="PlanVLM-bench, LVLM, LVLM Evaluation, multiple images, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PlanVLM-bench: Multimodal Multi-image Understanding for Evaluating Multimodal Large Language Models</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/leaderboard.css">
+
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+<div id="language-switcher" style="position: absolute; top: 1rem; left: 1rem; z-index: 999;">
+  <button onclick="changeLanguage('en')" 
+          class="external-link button is-normal is-rounded is-dark" 
+          style="margin-right: 0.5rem;">
+    English
+  </button>
+  <button onclick="changeLanguage('zh')" 
+          class="external-link button is-normal is-rounded is-dark">
+    中文
+  </button>
+</div>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: flex-end;">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com">
+            <b>PlanVLM</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
+          </a>
+          <a class="navbar-item" href="https://github.com">
+            <b>PlanGPT-Bench</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <span class="MMIU" style="vertical-align: middle">PlanVLM-bench</span>
+            </h1>
+          <h2 class="subtitle is-3 publication-subtitle">
+            Multimodal Multi-image Understanding for Evaluating Multimodal Large Language Models
+          </h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Yijie Deng<sup>*,</sup><sup style="color:#ffac33;">2</sup><sup>,</sup><sup style="color:#6fbf73;">1</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              He Zhu<sup style="color:#ed4b82;">3</sup><sup>,</sup><sup style="color:#6fbf73;">1</sup></a>
+              ,
+            </span>
+            <span class="author-block">
+              Wenjia Zhang<sup>†,</sup><sup style="color:#6fbf73;">1</sup></a>,
+            </span>
+<!--             <span class="author-block">Quanfeng Lu<sup style="color:#6fbf73;">1</sup><sup>,</sup><sup style="color:#ffac33;">2</sup>,</span>
+            <span class="author-block">Hao Tian<sup style="color:#007bff;">4</sup>,</span>
+            <span class="author-block">Jiaqi Liao<sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block">Xizhou Zhu<sup style="color:#9b51e0;">5</sup><sup>,</sup><sup style="color:#6fbf73;">1</sup><sup>,</sup><sup style="color:#007bff;">4</sup>,</span>
+            <span class="author-block">Jifeng Dai<sup style="color:#9b51e0;">5</sup><sup>,</sup><sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block">Yu Qiao<sup style="color:#6fbf73;">1</sup>,</span>
+            <span class="author-block">
+              Ping Luo<sup style="color:#ed4b82;">3</sup><sup>,</sup><sup style="color:#6fbf73;">1</sup></a>
+              ,
+          </span>
+          <span class="author-block">
+              Kaipeng Zhang<sup>†,</sup><sup style="color:#6fbf73;">1</sup></a>
+              ,
+          </span>
+          <span class="author-block">
+              Wenqi Shao<sup>†,</sup><sup style="color:#6fbf73;">1</sup></a>
+          </span> -->
+          
+          </div>
+          
+          <br>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup style="color:#6fbf73;">1</sup>Behavioral and Spatial AI Lab, Peking University & Tongji University</span>
+<!--             <span class="author-block"><sup style="color:#ffac33;">2</sup>Shanghai Jiao Tong University,</span></br>
+            <span class="author-block"><sup style="color:#ed4b82;">3</sup>The University of Hong Kong,</span>
+            <span class="author-block"><sup style="color:#007bff;">4</sup>SenseTime Research,</span>
+            <span class="author-block"><sup style="color:#9b51e0;">5</sup>Tsinghua University</span> -->
+          </div>
+
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">†Corresponding Author:</span>
+            <span class="author-block"><a href="yijiedeng@stu.pku.edu.cn">yijiedeng@stu.pku.edu.cn</a>,</span>
+            <span class="author-block"><a href="mailto:zhangkaipeng@pjlab.org.cn">wenjiazhang@pku.edu.cn</a></span>
+          </div>
+          
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <!-- @PAN TODO: change links -->
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              
+              <!-- Leaderboard Link. -->
+              <!-- <span class="link-block">
+                <a href="#leaderboard"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon has-text-white">
+                    <i class="fa-solid fa-trophy"></i>
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🔔News</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>🔥[2025-05-19] We released the <a href="https://arxiv.org">technical report</a>.</b>
+          </p>
+      </div>      
+        <div class="lang-en">
+            <h2 class="title is-3">Introduction</h2>
+            <div class="content has-text-justified">
+            <p>
+              Urban planning, as a highly interdisciplinary and practice-oriented field, requires testing beyond mere factual recall. It involves complex situational judgment, policy interpretation, spatial reasoning, and value assessment. Constructing a dedicated text-based benchmark enables effective evaluation of whether large language models truly understand urban planning in terms of: technical terminology and regulatory systems (e.g., <i>Urban and Rural Planning Law</i>, regulatory indicators), multi-level spatial governance logic (national–urban–community), and context-sensitive policy judgment and solution generation (e.g., site selection, land allocation, industrial recommendations).<br>
+              Planning texts are characterized by dense terminology, complex structure, and long reasoning chains. Building a benchmark helps enhance large models’ domain-specific adaptability in the following aspects:<br>
+              <ul>
+                <li>Textual deconstruction capability (e.g., regulation parsing, indicator interpretation)</li>
+                <li>Multi-perspective decision balancing capability (e.g., resident, government, and developer perspectives)</li>
+                <li>Long-form text understanding and spatial-logical relationship reconstruction capability</li>
+              </ul>
+              Text-based benchmarks serve as the linguistic foundation for “multimodal urban intelligence.” In subsequent integration with maps, charts, and spatial models, strong textual understanding is the core enabler of coordinated “text-visual-policy” intelligence.<br>
+            </p>
+            </p>
+            </div>
+        </div>
+        <div class="lang-zh" style="display: none;">
+            <h2 class="title is-3">概述</h2>
+            <div class="content has-text-justified">
+            <p>
+                城市规划作为高度跨学科、实践导向强的领域，其测试不仅仅是对知识的简单回忆，更涉及复杂情境判断、政策理解、空间逻辑推理与价值评估。构建专门的文本类benchmark，可以有效检验大模型是否真正理解了城市规划的：学科术语与规范体系（如《城乡规划法》《控规指标》）；多层级空间治理逻辑（国家-城市-社区）；情境化政策判断与方案生成能力（如选址、用地配置、产业建议）。<br>
+                规划类文本具有术语密集、结构复杂、推理链条长等特点。构建benchmark有助于提升大模型在以下方面的规划适配能力：<br>
+                <ul>
+                    <li>规划文本解构能力（如条例拆解、指标判读）</li>
+                    <li>多视角决策权衡能力（如居民、政府、开发商多方需求）</li>
+                    <li>长文本结构理解与空间信息逻辑重建能力</li>
+                </ul>
+                文本类benchmark是“多模态城市智能”的语言基础。在后续与地图、图表、空间模型的整合中，文本理解能力是完成“图-文-策”三维联动的基础环节。<br>
+            </p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+</div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 MMIU">
+    <span class="MMIU" style="vertical-align: middle">MMIU</span>
+  </h1>
+  </div>
+</section> -->
+
+<!-- <section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <img src="./pictures/VLMbench250512.png" alt="pipeline" class="center">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered m-6">
+      <div class="column is-full-width has-text-centered">
+        <div class="lang-en">
+        <h2 class="title is-3">Framework Design</h2>
+        <div class="content has-text-justified">
+          <p>
+            a) We began by reviewing urban planning curricula from leading institutions in both China and the United States, including Peking University, Tongji University, MIT, and Harvard GSD. This analysis identified core knowledge domains and learning objectives in contemporary planning education.
+          </p>
+          <p>
+            b) We further examined professional qualification examinations for urban planners across multiple countries, drawing from China’s Registered Urban Planner Exam, the U.S. AICP (American Institute of Certified Planners) certification, the UK’s RTPI (Royal Town Planning Institute) accreditation, Australia’s PIA (Planning Institute of Australia), and Canada’s CIP (Canadian Institute of Planners) to establish a foundational disciplinary framework.
+          </p>
+          <p>
+            c) By integrating disciplinary knowledge systems and exam syllabi, we classified the dataset into 4 major categories, 24 intermediate classes, and 81 subcategories. Using Content Validity Index (CVI) and Scale-Level CVI (S-CVI=1.0), we confirmed strong alignment between our classification system and international planner certification frameworks.
+          </p>
+          <p>
+            d) Adopting Bloom’s revised taxonomy, we developed a structured assessment matrix covering five cognitive levels of planning competencies. Each knowledge point was mapped to specific cognitive tasks:
+          </p>
+          <ul>
+            <li><strong>Remember:</strong> Recalling facts, terminology, and fundamental concepts.</li>
+            <li><strong>Understand:</strong> Interpreting, paraphrasing, and explaining key information.</li>
+            <li><strong>Apply:</strong> Synthesizing and contextualizing planning scenarios.</li>
+            <li><strong>Analyze:</strong> Deconstructing text structures, identifying implicit assumptions, and diagnosing issues.</li>
+            <li><strong>Evaluate:</strong> Comparing standards, assessing judgments, and critiquing solutions. Higher-order tasks also incorporated preliminary Create-level challenges, such as generating actionable recommendations for urban development issues.</li>
+          </ul>
+          <p>
+            e) To enhance model performance evaluation, particularly for complex reasoning tasks, we systematically embedded Chain-of-Thought (CoT) principles into question design. Scenarios included contextual preconditions, guided prompts, and deliberate logical fallacies, accompanied by discipline-specific analytical pathways to support CoT-match scoring.
+          </p>
+          <p>
+            f) For validation, we convened a panel of expert urban planners from academia and practice to workshop core knowledge domains and review assessment items. Each question was paired with detailed scoring rubrics specifying evaluation criteria and acceptable response elements. We employed a dual human-machine scoring system, with algorithmic metrics calibrated against human-annotated benchmarks to ensure reliability.
+          </p>
+        </div>
+        </div>
+        <div class="lang-zh" style="display: none;">
+          <h2 class="title is-3">框架设计</h2>
+          <div class="content has-text-justified">
+            <p>
+              我们首先对中国和美国的领先城市规划学校进行了深入的研究，包括北京大学、天津大学、麻省理工学院和哈佛大学。这一分析揭示了当代规划教育中的核心知识领域和学习目标。
+            </p>
+            <p>
+              我们进一步研究了多个国家的城市规划师专业资格考试，借鉴了中国的注册城市规划师考试、美国的AICP（美国注册城市规划师协会）认证、英国的RTPI（皇家城镇规划协会）认证、澳大利亚的PIA（澳大利亚规划协会）和加拿大的CIP（加拿大规划师协会），以建立一个基础学科框架。
+            </p>
+            <p>
+              通过整合学科知识体系和考试大纲，我们将数据集划分为4个主要类别、24个中级类和81个子类别。使用内容有效性指数（CVI）和尺度级CVI（S-CVI=1.0），我们确认了我们的分类系统与国际规划师认证框架之间的强一致性。
+            </p>
+            <p>
+              采用布鲁姆修订版分类法，我们开发了一个结构化的评估矩阵，涵盖了五个认知水平的规划能力。每个知识点都映射到特定的认知任务：
+            </p>
+            <ul>
+              <li><strong>记住：</strong>回忆事实、术语和基本概念。</li>
+              <li><strong>理解：</strong>解释、复述和解释关键信息。</li>
+              <li><strong>应用：</strong>综合和情境化规划场景。</li>
+              <li><strong>分析：</strong>分解文本结构，识别隐含假设和诊断问题。</li>
+              <li><strong>评估：</strong>比较标准、评估判断和批评解决方案。更高阶的任务还包含初步的创建级挑战，例如为城市发展问题生成可操作的建议。</li>
+            </ul>
+            <p>
+              为了增强模型性能评估，特别是对于复杂推理任务，我们系统地嵌入了Chain-of-Thought（CoT）原则到问题设计中。场景包括情境前提、引导提示和故意的逻辑谬误，伴随有特定学科的分析路径，以支持CoT匹配评分。
+            </p>
+            <p>
+              为验证，我们召集了来自学术界和实践的专业城市规划师进行核心知识领域的研讨会和评估项目的评审。每个问题都与详细的评分标准配对，指定了评估标准和可接受的响应元素。我们采用了双人类-机器评分系统，算法指标经过人类标注基准的校准，以确保可靠性。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3">Dataset</h2>
+        <div class="content">
+          <div class="content has-text-justified">
+            <p> 
+              The benchmark items span key categories of urban planning knowledge, including land use planning, transportation planning, urban design, housing and community development, environmental planning, and infrastructure planning. Each TextBench item consists of a query, context information (when applicable), and evaluation criteria. The queries assess different cognitive levels based on Bloom’s revised taxonomy, with balanced distribution across Remembering, Understanding,Applying, Analyzing, Evaluating, and Creating levels.<br>
+            </p>
+            <img src="./pictures/image.png" alt="knowledge classification" class="center", style="width: 50%; margin-left: auto; margin-right: auto;">
+          </div>
+          <!-- <table class="table-container", style="width: 80%; margin-left: auto; margin-right: auto;"">
+          <tr style="background-color: rgba(122, 122, 122, 0.15);"">
+              <td class="js-sort-number"><strong>Country/Region</strong></td>
+              <td class="js-sort-string"><strong>Certification Exam</strong></td>
+              <td class="js-sort-string"><strong>Core Content Areas</strong></td>
+              <td class="js-sort-string"><strong>Official Source</strong></td>
+          </tr>
+          <tr style="background-color: rgba(255, 208, 80, 0.15);">
+            <td style="text-align: center;"><strong>United States</strong></td>
+            <td>AICP Certification Exam</td>
+            <td>Fundamental Planning Knowledge<br>Communication and Interaction<br>Plan and Policy Development<br>Plan Implementation<br>Administration and Management<br>Leadership<br>Areas of Practice</td>
+            <td>American Planning Association (APA)</td>
+          </tr>
+          <tr>
+              <td>China</td>
+              <td>Registered Urban Planner Exam</td>
+              <td>Urban and Rural Planning Principles<br>Urban and Rural Planning Related Knowledge<br>Urban and Rural Planning Management and Regulations<br>Urban and Rural Planning Practice</td>
+              <td>Law of the People’s Republic of China on Urban and Rural Planning</td>
+          </tr>
+          <tr>
+              <td>United Kingdom</td>
+              <td>RTPI Assessment of Professional Competence (APC)</td>
+              <td>Professionalism and Ethics<br>Planning Practice and Legislation<br>Spatial Planning and Sustainable Development<br>Communication and Engagement</td>
+              <td>Royal Town Planning Institute (RTPI)</td>
+          </tr>
+          <tr>
+              <td>Canada</td>
+              <td>Professional Examination</td>
+              <td>Public Interest<br>Professional Responsibility<br>Ethics</td>
+              <td>Professional Standards Board (PSB)</td>
+          </tr>
+          <tr>
+              <td>Australia</td>
+              <td>Registered Planner Assessment</td>
+              <td>Developing and Applying Technical Knowledge<br>Professionalism and Integrity<br>Understanding, Interpreting and Using Spatial Thinking<br>Communicating and Engaging with Stakeholders<br>Understanding and Working with Planning Frameworks<br>Using a Creative and Integrative Approach</td>
+              <td>Planning Institute of Australia (PIA)</td>
+          </tr>
+          <tr>
+              <td>Singapore</td>
+              <td>Urban Planning Foundation Course</td>
+              <td>Urban Evolution and Planning<br>Planning Theories<br>Participatory Planning<br>Strategic and Local Planning<br>Development Control<br>Urban Design and Conservation<br>Sustainability and Liveability</td>
+              <td>Singapore Institute of Planners (SIP)</td>
+          </tr>
+          <tr>
+              <td>India</td>
+              <td>Town Planner Examination</td>
+              <td>Urban and Regional Planning Principles<br>Planning Techniques and Methods<br>Development Control Regulations<br>Urban Governance and Legislation</td>
+              <td>Town and Country Planning Organisation (TCPO)</td>
+          </tr>
+          <tr>
+              <td>Germany</td>
+              <td>Stadtplaner Certification</td>
+              <td>Urban Planning Law<br>Spatial Planning and Development<br>Environmental Planning<br>Urban Design and Architecture</td>
+              <td>Bundesarchitektenkammer (Federal Chamber of German Architects)</td>
+          </tr>
+          <tr>
+              <td>France</td>
+              <td>Urbaniste Qualification</td>
+              <td>Urban Planning and Development<br>Environmental and Sustainable Planning<br>Urban Policy and Governance<br>Planning Law and Regulations</td>
+              <td>Ministère de la Transition Écologique</td>
+          </tr>
+          <tr>
+              <td>Japan</td>
+              <td>Urban Planner Examination</td>
+              <td>Urban Planning Law<br>Land Use Planning<br>Urban Development and Design<br>Environmental and Disaster Prevention Planning</td>
+              <td>Ministry of Land, Infrastructure, Transport and Tourism (MLIT)</td>
+          </tr>
+        </table> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
+        <div class="content">
+          <div class="content has-text-justified">
+            <p>
+              Quantitative results for 24 LVLMs across 52 tasks are summarized. Accuracy is the metric, and the Overall score is computed across all tasks.  The maximum value of each task is bolded. Notice that although InternVL1.5-chat supports multiple image inputs, its training phase did not incorporate multi-image data. The full term of task abbreviation can be found in the paper.
+            </p>
+          </div>
+
+          <div class="model-labels-container">
+            <span class="leaderboard-label" style="background-color: rgba(255, 208, 80, 0.15);">DeepSeek</span>
+            <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">LLaMa</span>
+            <span class="leaderboard-label" style="background-color: rgb(229, 237, 255);">Qwen</span>
+            <span class="leaderboard-label" style="background-color: rgb(224, 243, 224);">Closed-source LLMs</span>
+            <span class="leaderboard-label" style="background-color: rgba(117, 209, 215, 0.1);">Other Open-source LLMs</span>
+          </div>
+        <!-- <style>
+            .table-container {
+              display: flex; /* Enables Flexbox layout */
+          }
+        </style> -->
+          <table class="table-container", style="width: 80%; margin-left: auto; margin-right: auto;"">
+            <tr style="background-color: rgba(122, 122, 122, 0.15);">
+                <td class="js-sort-number" style="text-align: left;" rowspan="2"><strong>Model names</strong></td>
+                <td class="js-sort-number" style="text-align: center;" colspan="5"><strong>Cognitive Levels</strong></td>
+                <td class="js-sort-number" style="text-align: left;"><strong>Model names</strong></td>
+            </tr>
+            <tr style="background-color: rgba(122, 122, 122, 0.15);">
+              <td class="js-sort-number"><strong>Remember</strong></td>
+              <td class="js-sort-number"><strong>Understand</strong></td>
+              <td class="js-sort-number"><strong>Apply</strong></td>
+              <td class="js-sort-number"><strong>Analyze</strong></td>
+              <td class="js-sort-number"><strong>Evaluate</strong></td>
+              <td class="js-sort-number"><strong>Score</strong></td>
+            </tr>
+
+        <tr style="background-color: rgba(255, 208, 80, 0.15);">
+          <td style="text-align: left;"><strong>DeepSeek-R1-Distill-Llama-8B</strong></td>
+          <td>28.4</td>
+          <td>93.8</td>
+          <td>64.2</td>
+          <td>78.8</td>
+          <td>75.3</td>
+          <td>68.1</td>
+        </tr>
+        <tr style="background-color: rgba(255, 208, 80, 0.15);">
+          <td style="text-align: left;"><strong>DeepSeek-R1-Distill-Qwen-7B</strong></td>
+          <td>23.5</td>
+          <td>96.3</td>
+          <td>69.1</td>
+          <td>73.4</td>
+          <td>77.8</td>
+          <td>68.0</td>
+        </tr>
+        <tr style="background-color: rgba(249, 242, 248, 1);">
+          <td style="text-align: left;"><strong>Llama-3.1-Tulu-3-8B</strong></td>
+          <td>16.0</td>
+          <td>60.5</td>
+          <td>56.8</td>
+          <td>80.8</td>
+          <td>30.9</td>
+          <td>49.0</td>
+        </tr>
+        <tr style="background-color: rgba(249, 242, 248, 1);">
+          <td style="text-align: left;"><strong>Meta-Llama-3-8B-Instruct</strong></td>
+          <td>48.1</td>
+          <td>95.1</td>
+          <td>58.0</td>
+          <td>78.8</td>
+          <td>72.8</td>
+          <td>70.6</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen2-5-3B-Instruct</strong></td>
+          <td>29.6</td>
+          <td>98.8</td>
+          <td>66.7</td>
+          <td>64.0</td>
+          <td>92.6</td>
+          <td>70.3</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen2-5-7B-Instruct</strong></td>
+          <td>30.9</td>
+          <td>98.8</td>
+          <td>70.4</td>
+          <td>65.9</td>
+          <td>81.5</td>
+          <td>69.5</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen2-VL-7B-Instruct</strong></td>
+          <td>39.5</td>
+          <td>93.8</td>
+          <td>65.4</td>
+          <td>65.7</td>
+          <td>76.5</td>
+          <td>68.2</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen2.5-0.5B-Instruct</strong></td>
+          <td>14.8</td>
+          <td>65.4</td>
+          <td>21.0</td>
+          <td>69.4</td>
+          <td>25.9</td>
+          <td>39.3</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-0.6B</strong></td>
+          <td>12.3</td>
+          <td>90.1</td>
+          <td>55.6</td>
+          <td>74.8</td>
+          <td>46.9</td>
+          <td>55.9</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-1.7B</strong></td>
+          <td>34.6</td>
+          <td>95.1</td>
+          <td>79.0</td>
+          <td>85.1</td>
+          <td>76.5</td>
+          <td>74.1</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-4B</strong></td>
+          <td>46.9</td>
+          <td>95.1</td>
+          <td>72.8</td>
+          <td>89.3</td>
+          <td>90.1</td>
+          <td>78.8</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-8B</strong></td>
+          <td>45.7</td>
+          <td>93.8</td>
+          <td>80.2</td>
+          <td>90.4</td>
+          <td>90.1</td>
+          <td>80.0</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-14B</strong></td>
+          <td>48.1</td>
+          <td>97.5</td>
+          <td>77.8</td>
+          <td>86.8</td>
+          <td>92.6</td>
+          <td>80.6</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-30B-A3B</strong></td>
+          <td>37.0</td>
+          <td>97.5</td>
+          <td>79.0</td>
+          <td>89.5</td>
+          <td>88.9</td>
+          <td>78.4</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>Qwen3-32B</strong></td>
+          <td>39.5</td>
+          <td>97.5</td>
+          <td>86.4</td>
+          <td>86.1</td>
+          <td>95.1</td>
+          <td>80.9</td>
+        </tr>
+        <tr style="background-color: rgb(229, 237, 255);">
+          <td style="text-align: left;"><strong>QwQ-32B</strong></td>
+          <td>38.3</td>
+          <td>95.1</td>
+          <td>85.2</td>
+          <td>91.9</td>
+          <td>91.4</td>
+          <td>80.4</td>
+        </tr>
+        <tr style="background-color: rgba(117, 209, 215, 0.1);">
+          <td style="text-align: left;"><strong>Yi-6B-Chat</strong></td>
+          <td>26.2</td>
+          <td>93.8</td>
+          <td>48.1</td>
+          <td>85.6</td>
+          <td>75.3</td>
+          <td>65.8</td>
+        </tr>
+        <tr style="background-color: rgba(117, 209, 215, 0.1);">
+          <td style="text-align: left;"><strong>Gemma-7B-it</strong></td>
+          <td>6.2</td>
+          <td>33.3</td>
+          <td>6.2</td>
+          <td>70.8</td>
+          <td>33.3</td>
+          <td>30.0</td>
+        </tr>
+        <tr style="background-color: rgba(117, 209, 215, 0.1);">
+          <td style="text-align: left;"><strong>Gemma-2-2B-it</strong></td>
+          <td>28.4</td>
+          <td>87.7</td>
+          <td>44.4</td>
+          <td>69.0</td>
+          <td>75.3</td>
+          <td>61.0</td>
+        </tr>
+        <tr style="background-color: rgba(117, 209, 215, 0.1);">
+          <td style="text-align: left;"><strong>Gemma-2-9B-it</strong></td>
+          <td>33.3</td>
+          <td>96.3</td>
+          <td>75.3</td>
+          <td>67.3</td>
+          <td>90.1</td>
+          <td>72.5</td>
+        </tr>
+        <tr style="background-color: rgba(117, 209, 215, 0.1);">
+          <td style="text-align: left;"><strong>chatglm3-6b</strong></td>
+          <td>21.0</td>
+          <td>80.2</td>
+          <td>37.5</td>
+          <td>58.3</td>
+          <td>44.4</td>
+          <td>48.3</td>
+        </tr>
+        <tr style="background-color: rgba(117, 209, 215, 0.1);">
+          <td style="text-align: left;"><strong>glm-4-9b-chat</strong></td>
+          <td>38.3</td>
+          <td>91.4</td>
+          <td>72.8</td>
+          <td>79.9</td>
+          <td>84.0</td>
+          <td>73.3</td>
+        </tr>
+      </table>  
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+  .image-row {
+      display: center; /* Use flexbox layout */
+  }
+  .image-row img {
+      width: 40%; /* Each image takes up 50% of the width */
+  }
+</style>
+
+<div class="container mt-6">
+  <div class="content">
+    <!-- 英文版（默认显示） -->
+    <div class="lang-en">
+      <h2 class="title is-4">Acknowledgements</h2>
+      <p><strong>Data Annotators</strong> Yijie Deng, Siqi Zha, Fenghong An, Hanying Li, Chuang Deng</p>
+      <br>
+    </div>
+    <!-- 中文版（默认隐藏） -->
+    <div class="lang-zh" style="display: none;">
+      <h2 class="title is-4">致谢</h2>
+      <p><strong>数据标注人员：</strong>邓奕杰，查思齐，安枫泓，李瀚滢，邓闯</p>
+      <br>
+    </div>
+  </div>
+</div>
+
+<!-- @PAN TODO: bibtex -->
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>
+      @misc{meng2024mmiumultimodalmultiimageunderstanding,
+        title={MMIU: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models}, 
+        author={Fanqing Meng and Jin Wang and Chuanhao Li and Quanfeng Lu and Hao Tian and Jiaqi Liao and Xizhou Zhu and Jifeng Dai and Yu Qiao and Ping Luo and Kaipeng Zhang and Wenqi Shao},
+        year={2024},
+        eprint={2408.02718},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2408.02718}, 
+  }
+</code></pre>
+  </div>
+</section> -->
+
+<!-- <footer class="footer">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is website adapted from <a href="https://github.com/OpenGVLab/MMT-Bench">MMT-Bench</a>, <a href="https://mmmu-benchmark.github.io/">MMMU</a>, <a href="https://mathvista.github.io/">MathVista</a> and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+</footer> -->
+
+<script>
+    function changeLanguage(language) {
+        // Hide all language-specific content
+        var enContent = document.querySelectorAll('.lang-en');
+        var zhContent = document.querySelectorAll('.lang-zh');
+        
+        if (language === 'en') {
+            enContent.forEach(function (el) {
+                el.style.display = 'block';
+            });
+            zhContent.forEach(function (el) {
+                el.style.display = 'none';
+            });
+        } else if (language === 'zh') {
+            zhContent.forEach(function (el) {
+                el.style.display = 'block';
+            });
+            enContent.forEach(function (el) {
+                el.style.display = 'none';
+            });
+        }
+    }
+</script>
+
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .publication-links .link-block {
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+  #toggleButton {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    color: #555555;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+  }
+
+  #toggleButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* 鼠标悬停时的阴影效果 */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  th, td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  th {
+      background-color: #f2f2f2;
+      border-bottom: 2px solid #ddd;
+  }
+
+  td:hover {background-color: #ffffff;}
+</style>
+</body>
+</html>
