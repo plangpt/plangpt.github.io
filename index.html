@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PlanVLM-bench</title>
+  <title>Urban Planning Bench</title>
   <meta charset="utf-8">
   <meta name="description"
         content="Multimodal Multi-image Understanding for Evaluating Multimodal Large Language Models">
@@ -325,6 +325,7 @@
   <div class="container">
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
+        <div class="lang-en">
         <h2 class="title is-3">Dataset</h2>
         <div class="content">
           <div class="content has-text-justified">
@@ -333,6 +334,7 @@
             </p>
             <img src="./pictures/image.png" alt="knowledge classification" class="center", style="width: 50%; margin-left: auto; margin-right: auto;">
           </div>
+        
           <!-- <table class="table-container", style="width: 80%; margin-left: auto; margin-right: auto;"">
           <tr style="background-color: rgba(122, 122, 122, 0.15);"">
               <td class="js-sort-number"><strong>Country/Region</strong></td>
@@ -402,6 +404,18 @@
           </tr>
         </table> -->
         </div>
+        </div>
+        <div class="lang-zh" style="display: none;">
+          <h2 class="title is-3">数据集</h2>
+          <div class="content">
+            <div class="content has-text-justified">
+              <p>
+                benchmark题目覆盖了城市规划知识的关键类别，包括土地利用规划、交通规划、城市设计、住房和社区发展、环境规划和基础设施规划。每个TextBench项目由一个查询、上下文信息（如适用）和评估标准组成。查询根据布鲁姆修订版分类法评估不同的认知水平，涵盖了记忆、理解、应用、分析、评估和创造等多个层次。
+              </p>
+              <img src="./pictures/image.png" alt="knowledge classification" class="center", style="width: 50%; margin-left: auto; margin-right: auto;">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -414,10 +428,19 @@
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
         <div class="content">
+          <div class="lang-en">
           <div class="content has-text-justified">
             <p>
               Quantitative results for 24 LVLMs across 52 tasks are summarized. Accuracy is the metric, and the Overall score is computed across all tasks.  The maximum value of each task is bolded. Notice that although InternVL1.5-chat supports multiple image inputs, its training phase did not incorporate multi-image data. The full term of task abbreviation can be found in the paper.
             </p>
+          </div>
+          </div>
+          <div class="lang-zh" style="display: none;">
+            <div class="content has-text-justified">
+              <p>
+                24个LVLM在52个任务上的定量结果进行了总结。准确率是评价指标，Overall score是在所有任务上计算得到的。每个任务的最大值被加粗显示。请注意，虽然InternVL1.5-chat支持多图像输入，但其训练阶段没有包含多图像数据。任务缩写的完整术语可以在论文中找到。
+              </p>
+            </div>
           </div>
 
           <div class="model-labels-container">
