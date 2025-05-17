@@ -58,7 +58,7 @@
             <b>PlanVLM</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
           </a>
           <a class="navbar-item" href="https://github.com">
-            <b>PlanGPT-Bench</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
+            <b>PlanVL-Bench</b> <p style="font-size:18px; display: inline; margin-left: 5px;">🔥</p>
           </a>
         </div>
       </div>
@@ -253,9 +253,9 @@
 </section> -->
 
 <section class="section">
-  <div class="container">
-    <div class="columns is-centered m-6">
-      <div class="column is-full-width has-text-centered">
+  <div class="container", style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
         <div class="lang-en">
         <h2 class="title is-3">Framework Design</h2>
         <div class="content has-text-justified">
@@ -314,6 +314,7 @@
             <p>
               为验证，我们召集了来自学术界和实践的专业城市规划师进行核心知识领域的研讨会和评估项目的评审。每个问题都与详细的评分标准配对，指定了评估标准和可接受的响应元素。我们采用了双人类-机器评分系统，算法指标经过人类标注基准的校准，以确保可靠性。
             </p>
+            <img src="./pictures/image_short.png" alt="image_short" class="center", style="width: 50%; margin-left: auto; margin-right: auto;">
           </div>
         </div>
       </div>
@@ -322,9 +323,9 @@
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
+  <div class="container", style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered content">
         <div class="lang-en">
         <h2 class="title is-3">Dataset</h2>
         <div class="content">
@@ -332,7 +333,19 @@
             <p> 
               The benchmark items span key categories of urban planning knowledge, including land use planning, transportation planning, urban design, housing and community development, environmental planning, and infrastructure planning. Each TextBench item consists of a query, context information (when applicable), and evaluation criteria. The queries assess different cognitive levels based on Bloom’s revised taxonomy, with balanced distribution across Remembering, Understanding,Applying, Analyzing, Evaluating, and Creating levels.<br>
             </p>
-            <img src="./pictures/image.png" alt="knowledge classification" class="center", style="width: 50%; margin-left: auto; margin-right: auto;">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <figure class="image is-4by3">
+                <img src="./pictures/image.png" alt="knowledge classification" style="width: 100%; margin-left: auto; margin-right: auto;">
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure class="image is-4by3">
+                <img src="./pictures/image_short.png" alt="knowledge classification" style="width: 100%; margin-left: auto; margin-right: auto;">
+              </figure>
+            </div>
+          </div>
+
           </div>
         
           <!-- <table class="table-container", style="width: 80%; margin-left: auto; margin-right: auto;"">
@@ -412,7 +425,18 @@
               <p>
                 benchmark题目覆盖了城市规划知识的关键类别，包括土地利用规划、交通规划、城市设计、住房和社区发展、环境规划和基础设施规划。每个TextBench项目由一个查询、上下文信息（如适用）和评估标准组成。查询根据布鲁姆修订版分类法评估不同的认知水平，涵盖了记忆、理解、应用、分析、评估和创造等多个层次。
               </p>
-              <img src="./pictures/image.png" alt="knowledge classification" class="center", style="width: 50%; margin-left: auto; margin-right: auto;">
+            <div class="columns is-centered">
+              <div class="column is-half">
+                <figure class="image is-4by3">
+                  <img src="./pictures/image.png" alt="knowledge classification" style="width: 100%; margin-left: auto; margin-right: auto;">
+                </figure>
+              </div>
+              <div class="column is-half">
+                <figure class="image is-4by3">
+                  <img src="./pictures/image_short.png" alt="knowledge classification" style="width: 100%; margin-left: auto; margin-right: auto;">
+                </figure>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -423,9 +447,9 @@
 
 
 <section class="section">
-  <div class="container">
-    <div class="columns is-centered m-6">
-      <div class="column is-full has-text-centered content">
+  <div class="container" , style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered content">
         <h2 class="title is-3" id="leaderboard">Leaderboard</h2>
         <div class="content">
           <div class="lang-en">
@@ -444,10 +468,10 @@
           </div>
 
           <div class="model-labels-container">
-            <span class="leaderboard-label" style="background-color: rgba(255, 208, 80, 0.15);">DeepSeek</span>
-            <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">LLaMa</span>
-            <span class="leaderboard-label" style="background-color: rgb(229, 237, 255);">Qwen</span>
-            <span class="leaderboard-label" style="background-color: rgb(224, 243, 224);">Closed-source LLMs</span>
+            <span class="leaderboard-label" style="background-color: rgba(255, 208, 80, 0.15);">DeepSeek Family</span>
+            <span class="leaderboard-label" style="background-color: rgba(249, 242, 248, 1);">LLaMa Family</span>
+            <span class="leaderboard-label" style="background-color: rgb(229, 237, 255);">Qwen Family</span>
+            <!-- <span class="leaderboard-label" style="background-color: rgb(224, 243, 224);">Closed-source LLMs</span> -->
             <span class="leaderboard-label" style="background-color: rgba(117, 209, 215, 0.1);">Other Open-source LLMs</span>
           </div>
         <!-- <style>
