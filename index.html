@@ -68,9 +68,9 @@
               <li><a href="#PlanBench-规划知识基准">PlanBench-规划知识基准</a></li>
               <li><a href="#PlanBench-规划图识基准">PlanBench-规划图识基准</a></li>
               <li><a href="#PlanGPT-VL">PlanGPT-VL</a></li>
-              <li><a href="#生活圈治理大模型">生活圈治理大模型</a></li>
               <li><a href="#数据合成技术研究">数据合成技术研究</a></li>
               <li><a href="#类脑空间智能：位置编码赋能大模型">类脑空间智能：位置编码赋能大模型</a></li>
+              <li><a href="#生活圈治理大模型">生活圈治理大模型</a></li>
             </ul>
           </aside>
           <div class="dropdown is-hidden-desktop">
@@ -88,9 +88,9 @@
                 <a href="#PlanBench-规划知识基准" class="dropdown-item">PlanBench-规划知识基准</a>
                 <a href="#PlanBench-规划图识基准" class="dropdown-item">PlanBench-规划图识基准</a>
                 <a href="#PlanGPT-VL" class="dropdown-item">PlanGPT-VL</a>
-                <a href="#生活圈治理大模型" class="dropdown-item">生活圈治理大模型</a>
                 <a href="#数据合成技术研究" class="dropdown-item">数据合成技术研究</a>
                 <a href="#类脑空间智能：位置编码赋能大模型" class="dropdown-item">类脑空间智能：位置编码赋能大模型</a>
+                <a href="#生活圈治理大模型" class="dropdown-item">生活圈治理大模型</a>
               </div>
             </div>
           </div>
@@ -193,7 +193,7 @@
               </a>
             </span>
             <span class="link-block">
-              <a href="https://wangqianxu7.github.io/PlanBench/"
+              <a href="https://behavioral-spatial-ai-lab.github.io/"
                   class="external-link button is-normal is-rounded is-dark">
                 <span>🔗主页</span>
                 </a>
@@ -275,31 +275,20 @@
             <h2 class="title is-3">摘要</h2>
             <div class="content has-text-justified" style="line-height: 2;">
             <p>
-                城市规划作为高度跨学科、实践导向强的领域，其测试不仅仅是对知识的简单回忆，更涉及复杂情境判断、政策理解、空间逻辑推理与价值评估。构建专门的文本类benchmark，可以有效检验大模型是否真正理解了城市规划的：学科术语与规范体系（如《城乡规划法》《控规指标》）；多层级空间治理逻辑（国家-城市-社区）；情境化政策判断与方案生成能力（如选址、用地配置、产业建议）。<br>
-                <br>
-                规划类文本具有术语密集、结构复杂、推理链条长等特点。构建benchmark有助于提升大模型在以下方面的规划适配能力：<br>
+                城市规划作为高度跨学科、实践导向强的领域，其测试不仅仅是对知识的简单回忆，更涉及复杂情境判断、政策理解、空间逻辑推理与价值评估。规划类文本具有术语密集、结构复杂、推理链条长等特点。构建benchmark有助于提升大模型在以下方面的规划适配能力：<br>
                 <ul>
                     <li>规划文本解构能力（如条例拆解、指标判读）</li>
-                    <li>多视角决策权衡能力（如居民、政府、开发商多方需求）</li>
-                    <li>长文本结构理解与空间信息逻辑重建能力</li>
+                    <li>多层级空间治理逻辑能力（国家-城市-社区）</li>
+                    <li>情境化政策判断与方案生成能力（如选址、用地配置、产业建议）</li>
                 </ul>
                 文本类benchmark是“多模态城市智能”的语言基础。在后续与地图、图表、空间模型的整合中，文本理解能力是完成“图-文-策”三维联动的基础环节。<br>
             </p>
             </div>
         <h3 class="title is-4">技术架构</h3>
           <div class="content has-text-justified">
-          <div class="columns is-centered">
-              <div class="column is-half">
-                <figure class="image is-4by3">
-                  <img src="./pictures/image.png" alt="knowledge classification" style="width: 100%; margin-left: auto; margin-right: auto;">
-                </figure>
-              </div>
-              <div class="column is-half">
-                <figure class="image is-4by3">
-                  <img src="./pictures/planbench_text.png" alt="knowledge classification" style="width: 100%; margin-left: auto; margin-right: auto;">
-                </figure>
-              </div>
-            </div>
+            <img class="columns is-centered has-text-centered" src="./pictures/planbench_text_show.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
@@ -471,72 +460,6 @@
   </div>
 </section>
 
-<section class="hero is-light is-small">
-  <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT", id="生活圈治理大模型">
-    <span class="PlanGPT" style="vertical-align: middle">生活圈治理大模型</span>
-  </h1>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths has-text-centered">
-        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
-          大语言模型助力社区生活圈规划与治理研究
-        </h2>
-        <div class="has-text-right mt-4">
-          <p class="is-size-6 has-text-grey is-italic is_centered">
-            即将刊登在《上海城市规划》
-          </p>
-        </div>
-            <!-- <div class="column has-text-centered">
-              <img class="columns is-centered has-text-centered" src="./pictures/方元问问.png" alt="Teaser" width="65%"
-                      style="margin:0 auto">
-            </div> -->
-        <h2 class="title is-3">摘要</h2>
-          <div class="content has-text-justified" style="line-height: 2;">
-            <p>
-              围绕生活圈规划与社区治理，LLM 可在以下关键环节中发挥赋能作用。首先，通过自然语言交互，LLM 可理解居民在不同情境下的真实诉求，自动从聊天记录、问卷文本、社交平台评论中提取需求主题与情感倾向，实现需求的自动归类与优先级排序，破解居民需求异质性高与表达方式非结构化之间矛盾所带来的精准服务供给困难。其次，LLM 能够将来自传感器网络、社区GIS、人口统计、政务服务平台等的数据进行语义整合与关系建模，提升数据间的可解释性与可操作性，为生活圈的功能评估、资源配置与空间优化提供支撑。同时，在社区协同治理过程中，LLM 可充当“中介智能体”，支持居民与街道办、物业、企业等多元主体之间的语义桥接，辅助完成政策解释、议题协商、共识生成等过程，提升协同效率与满意度。
-            </p>
-          </div>
-        <h3 class="title is-4">技术架构</h3>
-          <div class="content has-text-justified">
-            <img class="columns is-centered has-text-centered" src="./pictures/grid_rag.png" alt="Teaser" width="75%"
-                  style="margin:0 auto">
-            <figcaption>
-              <p style="text-align: center;">
-                <font color="061E61">
-                    <b>Figure 5:</b> 地理邻近性增强的多模态RAG框架.
-                </font>
-              </p>
-            </figcaption>
-          </div>
-          <div class="content has-text-justified" style="line-height: 2;">
-            <p>
-              由实验室李博洋与黄诺贤研发的微信小程序“方元问问”部分实现了上述大模型助理生活圈规划与治理的场景，聚焦在针对社区居民和商家的公共服务设施信息智能助手，目前已经在深圳市南头古城社区展开试运行与落地实验。该应用通过微信小程序的自然语言交互，结合社区的地理信息与多模态数据，实现了对社区公共服务设施的智能查询与推荐，为社区居民提供了便捷的服务导航与咨询。同时，该应用还支持社区居民与商家之间的信息共享与交易，为社区的公共服务设施管理与运营提供了支持。<br>
-            </p>
-          </div>
-          <img class="columns is-centered has-text-centered" src="./pictures/fangyuanwenwen.png" alt="Teaser" width="75%"
-                  style="margin:0 auto">
-            <figcaption>
-              <p style="text-align: center;">
-                <font color="061E61">
-                    <b>Figure 6:</b> “方元问问”社区应用场景示例.
-                </font>
-              </p>
-            </figcaption>
-        <div class="has-text-right mt-4">
-          <p class="is-size-6 has-text-grey is-italic">
-            📅 发布日期：2024年8月26日
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
   <h1 class="title is-1 PlanGPT">
@@ -578,7 +501,7 @@
           <div class="publication-links">
             <!-- PDF Link. -->
             <span class="link-block">
-              <a href="https://arxiv.org/pdf/2408.01323"
+              <a href="https://arxiv.org/abs/2408.01323"
                   class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -608,7 +531,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 7:</b> FANNO Architecture.
+                    <b>Figure 5:</b> FANNO Architecture.
                 </font>
               </p>
             </figcaption>
@@ -658,7 +581,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 8:</b> Tag-Instruct Architecture.
+                    <b>Figure 6:</b> Tag-Instruct Architecture.
                 </font>
               </p>
             </figcaption>
@@ -692,7 +615,7 @@
           <div class="publication-links">
             <!-- PDF Link. -->
             <span class="link-block">
-              <a href="https://arxiv.org/pdf/2406.07049"
+              <a href="https://arxiv.org/abs/2406.07049"
                   class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -722,7 +645,7 @@
             <figcaption>
               <p style="text-align: center;">
                 <font color="061E61">
-                    <b>Figure 9:</b> GridPE Architecture.
+                    <b>Figure 7:</b> GridPE Architecture.
                 </font>
               </p>
             </figcaption>
@@ -730,6 +653,72 @@
         <div class="has-text-right mt-4">
           <p class="is-size-6 has-text-grey is-italic">
             📅 发布日期：2024年6月11日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT", id="生活圈治理大模型">
+    <span class="PlanGPT" style="vertical-align: middle">生活圈治理大模型</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          大语言模型助力社区生活圈规划与治理研究
+        </h2>
+        <div class="has-text-right mt-4">
+          <p class="is-size-6 has-text-grey is-italic is_centered">
+            即将刊登在《上海城市规划》
+          </p>
+        </div>
+            <!-- <div class="column has-text-centered">
+              <img class="columns is-centered has-text-centered" src="./pictures/方元问问.png" alt="Teaser" width="65%"
+                      style="margin:0 auto">
+            </div> -->
+        <h2 class="title is-3">摘要</h2>
+          <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              围绕生活圈规划与社区治理，LLM 可在以下关键环节中发挥赋能作用。首先，通过自然语言交互，LLM 可理解居民在不同情境下的真实诉求，自动从聊天记录、问卷文本、社交平台评论中提取需求主题与情感倾向，实现需求的自动归类与优先级排序，破解居民需求异质性高与表达方式非结构化之间矛盾所带来的精准服务供给困难。其次，LLM 能够将来自传感器网络、社区GIS、人口统计、政务服务平台等的数据进行语义整合与关系建模，提升数据间的可解释性与可操作性，为生活圈的功能评估、资源配置与空间优化提供支撑。同时，在社区协同治理过程中，LLM 可充当“中介智能体”，支持居民与街道办、物业、企业等多元主体之间的语义桥接，辅助完成政策解释、议题协商、共识生成等过程，提升协同效率与满意度。
+            </p>
+          </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/grid_rag.png" alt="Teaser" width="75%"
+                  style="margin:0 auto">
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 8:</b> 地理邻近性增强的多模态RAG框架.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+          <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              由实验室李博洋与黄诺贤研发的微信小程序“方元问问”部分实现了上述大模型助理生活圈规划与治理的场景，聚焦在针对社区居民和商家的公共服务设施信息智能助手，目前已经在深圳市南头古城社区展开试运行与落地实验。该应用通过微信小程序的自然语言交互，结合社区的地理信息与多模态数据，实现了对社区公共服务设施的智能查询与推荐，为社区居民提供了便捷的服务导航与咨询。同时，该应用还支持社区居民与商家之间的信息共享与交易，为社区的公共服务设施管理与运营提供了支持。<br>
+            </p>
+          </div>
+          <img class="columns is-centered has-text-centered" src="./pictures/fangyuanwenwen.png" alt="Teaser" width="75%"
+                  style="margin:0 auto">
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 9:</b> “方元问问”社区应用场景示例.
+                </font>
+              </p>
+            </figcaption>
+        <div class="has-text-right mt-4">
+          <p class="is-size-6 has-text-grey is-italic">
+            📅 发布日期：2024年8月26日
           </p>
         </div>
       </div>
