@@ -23,23 +23,57 @@
     .hidden {
       display: none;
     }
+    
+    .sticky-menu {
+      position: -webkit-sticky; /* 支持 Safari */
+      position: sticky;
+      top: 4rem;
+    }
   </style>
 </head>
 
 <body>
-<!-- <div id="language-switcher" style="position: absolute; top: 1rem; left: 1rem; z-index: 999;">
-  <button onclick="changeLanguage('en')" 
-          class="external-link button is-normal is-rounded is-dark" 
-          style="margin-right: 0.5rem;">
-    English
-  </button>
-  <button onclick="changeLanguage('zh')" 
-          class="external-link button is-normal is-rounded is-dark">
-    中文
-  </button>
-</div> -->
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        
+        <!-- 左侧目录栏 -->
+        <div class="column is-2">
+          <aside class="menu sticky-menu is-hidden-mobile">
+            <p class="menu-label">目录</p>
+            <ul class="menu-list">
+              <li><a href="#PlanGPT1.0">PlanGPT1.0</a></li>
+              <li><a href="#PlanBench-规划知识">PlanBench-规划知识</a></li>
+              <li><a href="#PlanBench-规划图识">PlanBench-规划图识</a></li>
+              <li><a href="#PlanVLM">PlanVLM</a></li>
+              <li><a href="#数据合成技术研究">数据合成技术研究</a></li>
+              <li><a href="#类脑空间智能：位置编码赋能大模型">类脑空间智能：位置编码赋能大模型</a></li>
+            </ul>
+          </aside>
+          <div class="dropdown is-hidden-desktop">
+            <div class="dropdown-trigger">
+              <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>目录</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#PlanGPT1.0" class="dropdown-item">PlanGPT1.0</a>
+                <a href="#PlanBench-规划知识" class="dropdown-item">PlanBench-规划知识</a>
+                <a href="#PlanBench-规划图识" class="dropdown-item">PlanBench-规划图识</a>
+                <a href="#PlanVLM" class="dropdown-item">PlanVLM</a>
+                <a href="#数据合成技术研究" class="dropdown-item">数据合成技术研究</a>
+                <a href="#类脑空间智能：位置编码赋能大模型" class="dropdown-item">类脑空间智能：位置编码赋能大模型</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
+        <!-- 右侧内容 -->
+        <div class="column is-10">
 
 <section class="hero">
   <div class="hero-body">
@@ -54,7 +88,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="section">
   <div class="container" style="margin-bottom: 2vh;">
@@ -75,8 +108,8 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
-    <span class="PlanGPT" style="vertical-align: middle">PlanGPT1.0</span>
+  <h1 class="title is-1 PlanGPT1.0" id="PlanGPT1.0">
+    <span class="PlanGPT1.0" style="vertical-align: middle">PlanGPT1.0</span>
   </h1>
   </div>
 </section>
@@ -140,7 +173,7 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
+  <h1 class="title is-1 PlanGPT" id="PlanBench-规划知识">
     <span class="PlanGPT" style="vertical-align: middle">PlanBench-规划知识</span>
   </h1>
   </div>
@@ -220,7 +253,7 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
+  <h1 class="title is-1 PlanGPT" id="PlanBench-规划图识">
     <span class="PlanGPT" style="vertical-align: middle">PlanBench-规划图识</span>
   </h1>
   </div>
@@ -308,7 +341,7 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
+  <h1 class="title is-1 PlanGPT" id="PlanVLM">
     <span class="PlanGPT" style="vertical-align: middle">PlanVLM</span>
   </h1>
   </div>
@@ -372,7 +405,7 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
+  <h1 class="title is-1 PlanGPT", id="生活圈治理大模型">
     <span class="PlanGPT" style="vertical-align: middle">生活圈治理大模型</span>
   </h1>
   </div>
@@ -440,8 +473,8 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
-    <span class="PlanGPT" style="vertical-align: middle">数据合成技术</span>
+  <h1 class="title is-1 PlanGPT" id="数据合成技术研究">
+    <span class="PlanGPT" style="vertical-align: middle">数据合成技术研究</span>
   </h1>
   </div>
 </section>
@@ -555,7 +588,7 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT">
+  <h1 class="title is-1 PlanGPT" id="类脑空间智能：位置编码赋能大模型">
     <span class="PlanGPT" style="vertical-align: middle">类脑空间智能：位置编码赋能大模型</span>
   </h1>
   </div>
@@ -759,5 +792,27 @@
   }
 
 </style>
+
+      </div>
+    </div>
+  </section>
+<script>
+  window.onload = function() {
+    history.replaceState("", document.title, window.location.pathname + window.location.search);
+  };
+</script>
+
+  <script>
+    // 初始化 Bulma 的 dropdown
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(($dropdown) => {
+        $dropdown.addEventListener('click', () => {
+          const $menu = $dropdown.querySelector('.dropdown-menu');
+          $menu.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
