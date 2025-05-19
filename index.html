@@ -29,6 +29,28 @@
       position: sticky;
       top: 4rem;
     }
+
+  .news-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+  }
+
+  .date {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 120px; /* 固定宽度确保日期部分对齐 */
+    margin-right: 10px; /* 日期和文本之间的间距 */
+  }
+
+  .news-text {
+    display: inline;
+    flex-grow: 1;
+  }
+
+  p {
+    margin: 0;
+  }
   </style>
 </head>
 
@@ -45,7 +67,7 @@
               <li><a href="#PlanGPT-1/1.5">PlanGPT-1/1.5</a></li>
               <li><a href="#PlanBench-规划知识基准">PlanBench-规划知识基准</a></li>
               <li><a href="#PlanBench-规划图识基准">PlanBench-规划图识基准</a></li>
-              <li><a href="#PlanVLM">PlanVLM</a></li>
+              <li><a href="#PlanGPT-VL">PlanGPT-VL</a></li>
               <li><a href="#数据合成技术研究">数据合成技术研究</a></li>
               <li><a href="#类脑空间智能：位置编码赋能大模型">类脑空间智能：位置编码赋能大模型</a></li>
             </ul>
@@ -64,7 +86,7 @@
                 <a href="#PlanGPT-1/1.5" class="dropdown-item">PlanGPT-1/1.5</a>
                 <a href="#PlanBench-规划知识基准" class="dropdown-item">PlanBench-规划知识基准</a>
                 <a href="#PlanBench-规划图识基准" class="dropdown-item">PlanBench-规划图识基准</a>
-                <a href="#PlanVLM" class="dropdown-item">PlanVLM</a>
+                <a href="#PlanGPT-VL" class="dropdown-item">PlanGPT-VL</a>
                 <a href="#数据合成技术研究" class="dropdown-item">数据合成技术研究</a>
                 <a href="#类脑空间智能：位置编码赋能大模型" class="dropdown-item">类脑空间智能：位置编码赋能大模型</a>
               </div>
@@ -96,17 +118,42 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">🔔News</h2>
         <div class="content has-text-justified">
-          <p>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-05-20]</span> 同济大学校庆日：工程智能研究院、城市时空智能研究中心成立.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-05-20]</span> “冲之场”——AI赋能时空智能论坛、PlanGPT-2系列成果宣讲与陆续发布.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-05-16]</span> 祝贺实验室朱赫同学2篇关于数据合成技术的长论文《FANNO》和《Tag-Instruct》被计算机顶会ACL findings接收.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-05-09]</span> 祝贺实验室阶段性成果PlanGPT-1.5被顶会ACL Industry Track接收，并获得Oral Presentation机会（5%的优秀论文）.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-05-09]</span> 同济大学高层次人才科研项目立项：整合大数据与大模型的空间规划智能技术研究.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-05-01]</span> 欢迎李琦、郑宏舟加入实验室，攻读城市规划博士和智能科学与技术博士.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-04-15]</span> 欢迎安枫泓，查思齐，邓闯，李瀚滢加入实验室，攻读硕士研究生.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2025-01-14]</span> 上海市教委人工智能促进科研范式改革赋能学科跃升计划项目重点项目获批立项：提升空间认知决策能力的城乡规划垂域大模型研发.</b> <br>
-            <b><span class="is-size-6 has-text-grey is-italic">[2024-12-12]</span> 2个大模型相关项目（中规院、深圳海促中心）顺利完成结题.</b> <br>
-          </p>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-20]</span>
+            <span class="news-text">同济大学校庆日：工程智能研究院、城市时空智能研究中心成立.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-20]</span>
+            <span class="news-text">“冲之场”——AI赋能时空智能论坛、PlanGPT-2系列成果宣讲与陆续发布.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-16]</span>
+            <span class="news-text">祝贺实验室朱赫同学2篇关于数据合成技术的长论文《FANNO》和《Tag-Instruct》被计算机顶会ACL findings接收.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-09]</span>
+            <span class="news-text">祝贺实验室阶段性成果PlanGPT-1.5被顶会ACL Industry Track接收，并获得Oral Presentation机会（5%的优秀论文）.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-09]</span>
+            <span class="news-text">同济大学高层次人才科研项目立项：整合大数据与大模型的空间规划智能技术研究.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-01]</span>
+            <span class="news-text">欢迎李琦、郑宏舟加入实验室，攻读城市规划博士和智能科学与技术博士.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-04-15]</span>
+            <span class="news-text">欢迎安枫泓，查思齐，邓闯，李瀚滢加入实验室，攻读硕士研究生.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-01-14]</span>
+            <span class="news-text">上海市教委人工智能促进科研范式改革赋能学科跃升计划项目重点项目获批立项：提升空间认知决策能力的城乡规划垂域大模型研发.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2024-12-12]</span>
+            <span class="news-text">2个大模型相关项目（中规院、深圳海促中心）顺利完成结题.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -172,10 +219,10 @@
           </div>
         <div class="content has-text-justified">
           <p>
-            PlanGPT-1.5：在PlanGPT-1的基础上，补充了从城市规划实务界业务场景应用大模型的经验、进一步缓解幻觉的方法、减少人工标注成本的数据合成技术探索等工程落地关键技术，论文已被ACL'25 (Industry) Oral接收，在四个reviewers中收获一个9/10评价，高度认可了PlanGPT在行业大模型中的价值。
+            <b>PlanGPT-1.5：</b>在PlanGPT-1的基础上，补充了从城市规划实务界业务场景应用大模型的经验、进一步缓解幻觉的方法、减少人工标注成本的数据合成技术探索等工程落地关键技术，论文已被ACL'25 (Industry) Oral接收，在四个reviewers中收获一个9/10评价，高度认可了PlanGPT在行业大模型中的价值。
           </p>
           <blockquote>  
-            “The paper describes a real-life implementation of an LLM-based assistant tailored to a specific domain and highlights the importance of tailoring each component to obtain good usable results.”
+            “The paper describes a real-life implementation of an LLM-based assistant tailored to a specific domain and highlights the importance of tailoring each component to obtain good usable results. It can serve as a reference for carrying out similar adaptations in other domains and use cases.”
           </blockquote>
         </div>
         <div class="has-text-right mt-4">
@@ -227,6 +274,7 @@
             <div class="content has-text-justified">
             <p>
                 城市规划作为高度跨学科、实践导向强的领域，其测试不仅仅是对知识的简单回忆，更涉及复杂情境判断、政策理解、空间逻辑推理与价值评估。构建专门的文本类benchmark，可以有效检验大模型是否真正理解了城市规划的：学科术语与规范体系（如《城乡规划法》《控规指标》）；多层级空间治理逻辑（国家-城市-社区）；情境化政策判断与方案生成能力（如选址、用地配置、产业建议）。<br>
+                <br>
                 规划类文本具有术语密集、结构复杂、推理链条长等特点。构建benchmark有助于提升大模型在以下方面的规划适配能力：<br>
                 <ul>
                     <li>规划文本解构能力（如条例拆解、指标判读）</li>
@@ -307,6 +355,7 @@
             <div class="content has-text-justified">
             <p>
                 国土空间规划图是将国土空间规划的理念、目标、策略和具体措施以地图的形式直观展示出来，用于指导和协调各类国土空间开发、保护和利用活动。它不仅是规划决策的重要依据，也是公众参与和监督规划实施的重要工具。规划是综合性和专业性极强的工作，如果要读透规划图纸，不仅要抓住精细的元素（符号、图例和地理要素等），还要有结合政策进行综合分析和判断的能力。这种复杂性使得规划图的理解具有挑战性。随着多模态大型语言模型（MLLMs）的快速发展，我们建立了国土空间规划图的Benchmark，以评估MLLMs在规划图理解方面的能力。我们的贡献如下：<br>
+                <br>
                 <b>(1)	数据：</b> 我们构建了一个专家标注的规划图数据库Spatial Planning Map Database（SPMD)，其特点是多样化的图像内容和由规划领域专家提供的高质量标注。<br>
                 <b>(2)	框架：</b> 我们提出了一套基于规划学科的综合标准，从感知、推理、关联、应用四个角度衡量MLLMs的规划图理解能力，包括8个细分类别。<br>
                 <b>(3)	实验：</b> 通过基于权威题库（中国注册城市规划师执业资格考试实务题目）知识构建的问答任务，显著降低了模型“幻觉式规范引用”的比例。<br>
@@ -358,8 +407,8 @@
 
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 PlanGPT" id="PlanVLM">
-    <span class="PlanGPT" style="vertical-align: middle">PlanVLM</span>
+  <h1 class="title is-1 PlanGPT" id="PlanGPT-VL">
+    <span class="PlanGPT" style="vertical-align: middle">PlanGPT-VL</span>
   </h1>
   </div>
 </section>
