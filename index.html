@@ -73,7 +73,7 @@
               <li><a href="#生活圈大模型">生活圈大模型</a></li>
             </ul>
           </aside>
-          <div class="dropdown is-hidden-desktop">
+          <!-- <div class="dropdown is-hidden-desktop">
             <div class="dropdown-trigger">
               <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu">
                 <span>目录</span>
@@ -93,7 +93,7 @@
                 <a href="#生活圈大模型" class="dropdown-item">生活圈大模型</a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <!-- 右侧内容 -->
@@ -754,20 +754,19 @@
 <div class="container mt-6">
   <div class="content">
     <h2 class="title is-4">实验室成员</h2>
-    <div class="thanks-content" style="width: 105%;">
-      <div class="thanks-text" style="line-height: 2;">
+    <div class="thanks-content" style="width: 100%;">
+      <div class="thanks-text" style="line-height: 3;">
         <p>
           朱赫，陈旻歆，邓奕杰，苏军又，王稳，王雨润，武钰林，牛彩澄，陆天华，刘程程，李博洋，黄诺贤，蔡迎儿，魏玥，杨思正，牛璐瑶，顾嘉钰，邹宇晗，安枫泓，查思齐，邓闯，李瀚滢，郑宏舟，王琦
         </p>
       </div>
     </div>
-    <br>
-    <div class="image-container" style="display: flex; justify-content: center; gap: 20px; align-items: center;">
-      <div class="thanks-image" style="flex: 0 0 auto;">
-        <img src="./pictures/BSAI.png" alt="Teaser" style="width: 100%; height: 50px; object-fit: cover; max-width: 400px;">
+    <div class="image-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: center;">
+      <div class="thanks-image" style="flex: 1 1 200px; max-width: 300px;">
+        <img src="./pictures/BSAI.png" alt="BSAI" style="width: 100%; height: auto; object-fit: contain;">
       </div>
-      <div class="thanks-image" style="flex: 0 0 auto;">
-        <img src="./pictures/caup.png" alt="Second Image" style="width: 100%; height: 50px; object-fit: cover; max-width: 400px;">
+      <div class="thanks-image" style="flex: 1 1 200px; max-width: 300px;">
+        <img src="./pictures/caup.png" alt="CAUP" style="width: 100%; height: auto; object-fit: contain;">
       </div>
     </div>
   </div>
@@ -876,20 +875,43 @@
 
   td:hover {background-color: #ffffff;}
 
+.thanks-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* 允许在小屏幕自动换行 */
+  gap: 20px; /* 保持元素之间的间距 */
+}
+
+.thanks-text {
+  max-width: calc(100% - 120px); /* 图片宽度+间距 */
+  flex: 1 1 300px; /* 文字容器也具有弹性 */
+}
+
+.thanks-image img {
+  width: 400px;
+  height: auto;
+}
+
+/* ---------- 手机端样式 ---------- */
+@media screen and (max-width: 768px) {
   .thanks-content {
-    display: flex;
-    justify-content: space-between; /* 将文字和图片分开 */
-    align-items: center; /* 垂直居中对齐文字和图片 */
+    flex-direction: column; /* 垂直排列文字和图片 */
+    align-items: flex-start; /* 左对齐内容 */
+    gap: 1px; /* 减小间距 */
   }
 
   .thanks-text {
-    max-width: calc(100% - 170px); /* 确保文字占据除图片外的空间 */
+    max-width: 100%;
+    width: 100%;
   }
 
   .thanks-image img {
-    width: 400px; /* 设置图片宽度 */
-    height: auto; /* 保持图片的纵横比 */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
+}
 
 </style>
 
