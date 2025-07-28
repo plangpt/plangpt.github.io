@@ -4,14 +4,1028 @@
   <title>PlanGPT</title>
   <meta charset="utf-8">
   <meta name="description"
-        content="Multimodal Multi-image Understanding for Evaluating Multimodal Large Language Models">
-  <meta name="keywords" content="PlanVLM-bench, LVLM, LVLM Evaluation, multiple images, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
+        content="提升空间认知与决策能力的规划大模型（PlanGPT系列）">
+  <meta name="keywords" content="PlanGPT, PlanBench-Text, PlanBench-VL, PlanGPT-VL, BSAI, artificial general intelligence">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Urban Planning Bench: A Comprehensive Benchmark for Evaluating Urban Planning Capabilities in Large Language Models</title>
+  <title>提升空间认知与决策能力的规划大模型（PlanGPT系列）</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="./css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./css/bulma-slider.min.css">
-  <link rel="styleshe
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/leaderboard.css">
+
+  <style>
+    .hidden {
+      display: none;
+    }
+    
+    .sticky-menu {
+      position: -webkit-sticky; /* 支持 Safari */
+      position: sticky;
+      top: 4rem;
+    }
+
+  .news-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+    gap: 7px;
+  }
+
+  .date {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 120px; /* 固定宽度确保日期部分对齐 */
+    margin-right: 10px; /* 日期和文本之间的间距 */
+  }
+
+  .news-text {
+    display: inline;
+    flex-grow: 1;
+  }
+
+  p {
+    margin: 0;
+  }
+  </style>
+</head>
+
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        
+        <!-- 左侧目录栏 -->
+        <div class="column is-2">
+          <aside class="menu sticky-menu is-hidden-mobile">
+            <p class="menu-label">目录</p>
+            <ul class="menu-list">
+              <li><a href="#PlanGPT-1/1.5">PlanGPT-1/1.5</a></li>
+              <li><a href="#PlanBench规划知识基准">PlanBench规划知识基准</a></li>
+              <li><a href="#PlanBench规划图识基准">PlanBench规划图识基准</a></li>
+              <li><a href="#PlanGPT-VL">PlanGPT-VL</a></li>
+              <li><a href="#数据合成技术研究">数据合成技术研究</a></li>
+              <li><a href="#类脑空间智能：位置编码赋能大模型">类脑空间智能：位置编码赋能大模型</a></li>
+              <li><a href="#生活圈大模型">生活圈大模型</a></li>
+            </ul>
+          </aside>
+          <!-- <div class="dropdown is-hidden-desktop">
+            <div class="dropdown-trigger">
+              <button class="button is-primary" aria-haspopup="true" aria-controls="dropdown-menu">
+                <span>目录</span>
+                <span class="icon is-small">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <a href="#PlanGPT-1/1.5" class="dropdown-item">PlanGPT-1/1.5</a>
+                <a href="#PlanBench规划知识基准" class="dropdown-item">PlanBench规划知识基准</a>
+                <a href="#PlanBench规划图识基准" class="dropdown-item">PlanBench规划图识基准</a>
+                <a href="#PlanGPT-VL" class="dropdown-item">PlanGPT-VL</a>
+                <a href="#数据合成技术研究" class="dropdown-item">数据合成技术研究</a>
+                <a href="#类脑空间智能：位置编码赋能大模型" class="dropdown-item">类脑空间智能：位置编码赋能大模型</a>
+                <a href="#生活圈大模型" class="dropdown-item">生活圈大模型</a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- 右侧内容 -->
+        <div class="column is-10">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="maintitle is-1 publication-title is-bold">
+            <span class="PlanGPT" style="vertical-align: middle">提升空间认知与决策能力的规划大模型<br>（PlanGPT系列）</span>
+            </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="subtitle is-3">🔔News</h2>
+        <div class="content has-text-justified">
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-20]</span>
+            <span class="news-text">PlanGPT-VL已正式在Modelscope平台开源，并同步开放测试通道，欢迎试用与反馈.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-20]</span>
+            <span class="news-text">同济大学校庆日：工程智能研究院、城市时空智能研究中心成立.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-20]</span>
+            <span class="news-text">“冲之场”——AI赋能时空智能论坛、PlanGPT-2系列成果宣讲与陆续发布.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-16]</span>
+            <span class="news-text">祝贺实验室朱赫同学2篇关于数据合成技术的长论文《FANNO》和《Tag-Instruct》被计算机顶会ACL findings接收.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-09]</span>
+            <span class="news-text">祝贺实验室阶段性成果PlanGPT-1.5被顶会ACL Industry Track接收，并获得Oral Presentation机会.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-09]</span>
+            <span class="news-text">同济大学高层次人才科研项目立项：整合大数据与大模型的空间规划智能技术研究.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-05-01]</span>
+            <span class="news-text">欢迎王琦、郑宏舟加入实验室，攻读城市规划博士和智能科学与技术博士.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-04-15]</span>
+            <span class="news-text">欢迎安枫泓，查思齐，邓闯，李瀚滢加入实验室，攻读硕士研究生.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2025-01-14]</span>
+            <span class="news-text">上海市教委人工智能促进科研范式改革赋能学科跃升计划项目重点项目获批立项：提升空间认知决策能力的城乡规划垂域大模型研发.</span>
+          </div>
+          <div class="news-item">
+            <span class="date is-size-6 has-text-grey is-italic">[2024-12-12]</span>
+            <span class="news-text">2个大模型相关项目（中规院、深圳海促中心）顺利完成结题.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT-1/1.5" id="PlanGPT-1/1.5">
+    <span class="PlanGPT-1/1.5" style="vertical-align: middle">PlanGPT-1/1.5</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          PlanGPT: Enhancing Urban Planning with Tailored<br> Language Model and Efficient Retrieval
+        </h2>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <!-- @PAN TODO: change links -->
+              <a href="https://arxiv.org/abs/2402.19273"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://behavioral-spatial-ai-lab.github.io/"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>🔗主页</span>
+                </a>
+            </span>
+          </div>
+        </div>
+        <!-- <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic is_centered">
+            Accepted by ACL Industry Track 2025(Oral)
+          </p>
+        </div> -->
+        <h3 class="title is-4">摘要</h3>
+        <div class="content has-text-justified" style="line-height: 2;">
+          <p>
+            在城市规划领域，通用大语言模型通常无法满足规划师的特定需求。生成城市规划文本、检索相关信息和评估规划文件等任务都存在独特的挑战。为提高城市专业人员的效率并克服这些障碍，我们推出了 PlanGPT，这是第一个专为城市和空间规划量身定制的专业语言模型。通过与中国城市规划研究院等机构的协作努力，PlanGPT利用定制的本地数据库检索框架、基于行业的基础模型微调以及先进的工具能力进行开发。实证测试证明，PlanGPT取得了先进的表现，提供精准适应城市规划细节的优质响应。
+          </p>
+        </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/plangpt-architecture.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 1:</b> PlanGPT-1/1.5 Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="content has-text-justified" style="line-height: 2;">
+          <p>
+            <b>PlanGPT-1.5：</b>在PlanGPT-1的基础上，补充了从城市规划实务界业务场景应用大模型的经验、进一步缓解幻觉的方法、减少人工标注成本的数据合成技术探索等工程落地关键技术，论文已被ACL'25 (Industry) Oral接收，在四个reviewers中收获一个9/10评价，高度认可了PlanGPT在行业大模型中的价值。
+          </p>
+          <blockquote>  
+            “The paper describes a real-life implementation of an LLM-based assistant tailored to a specific domain and highlights the importance of tailoring each component to obtain good usable results. It can serve as a reference for carrying out similar adaptations in other domains and use cases.”
+          </blockquote>
+        </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2023年9月28日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT" id="PlanBench规划知识基准">
+    <span class="PlanGPT" style="vertical-align: middle">PlanBench规划知识基准</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          A Comprehensive Benchmark for Evaluating Urban Planning Capabilities in Large Language Models
+        </h2>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <!-- <span class="link-block">
+              <a href="https://arxiv.org/"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span> -->
+            <span class="link-block">
+              <a href="https://behavioral-spatial-ai-lab.github.io/plangpt-bench/"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>🔗主页</span>
+                </a>
+            </span>
+          </div>
+        </div>
+            <h3 class="title is-4">摘要</h3>
+            <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+                城市规划作为高度跨学科、实践导向强的领域，其测试不仅仅是对知识的简单回忆，更涉及复杂情境判断、政策理解、空间逻辑推理与价值评估。规划类文本具有术语密集、结构复杂、推理链条长等特点。构建benchmark有助于提升大模型在以下方面的规划适配能力：<br>
+            </p>
+                <ul>
+                    <li>规划文本解构能力（如条例拆解、指标判读）</li>
+                    <li>多层级空间治理逻辑能力（国家-城市-社区）</li>
+                    <li>情境化政策判断与方案生成能力（如选址、用地配置、产业建议）</li>
+                </ul>
+            <p>
+                文本类benchmark是“多模态城市智能”的语言基础。在后续与地图、图表、空间模型的整合中，文本理解能力是完成“图-文-策”三维联动的基础环节。<br>
+            </p>
+            </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/planbench_text_show.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 2:</b> PlanBench-Text Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2025年5月19日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT" id="PlanBench规划图识基准">
+    <span class="PlanGPT" style="vertical-align: middle">PlanBench规划图识基准</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          Multimodal Multi-image Understanding for Evaluating Multimodal Large Language Models
+        </h2>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <!-- <span class="link-block">
+              <a href="https://arxiv.org/"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span> -->
+            <span class="link-block">
+              <a href="https://behavioral-spatial-ai-lab.github.io/planvlm-bench/"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>🔗主页</span>
+                </a>
+            </span>
+          </div>
+        </div>
+            <h3 class="title is-4">摘要</h3>
+            <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+                国土空间规划图是将国土空间规划的理念、目标、策略和具体措施以地图的形式直观展示出来，用于指导和协调各类国土空间开发、保护和利用活动。它不仅是规划决策的重要依据，也是公众参与和监督规划实施的重要工具。规划是综合性和专业性极强的工作，如果要读透规划图纸，不仅要抓住精细的元素（符号、图例和地理要素等），还要有结合政策进行综合分析和判断的能力。这种复杂性使得规划图的理解具有挑战性。随着多模态大型语言模型（MLLMs）的快速发展，我们建立了国土空间规划图的Benchmark，以评估MLLMs在规划图理解方面的能力。我们的贡献如下：<br>
+                <br>
+                <b>(1)	数据：</b> 我们构建了一个专家标注的规划图数据库Spatial Planning Map Database（SPMD），其特点是多样化的图像内容和由规划领域专家提供的高质量标注。<br>
+                <b>(2)	框架：</b> 我们提出了一套基于规划学科的综合标准，从感知、推理、关联、应用四个角度衡量MLLMs的规划图理解能力，包括8个细分类别。<br>
+                <b>(3)	实验：</b> 通过基于权威题库（中国注册城市规划师执业资格考试实务题目）知识构建的问答任务，显著降低了模型“幻觉式规范引用”的比例。<br>
+                <b>(4)	结果：</b> 所有模型在应用维度表现最差，Qwen2.5-VL-32B-Instruct 四个维度综合得分最高。<br>
+            </p>
+            </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/VLMbench250512.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 3:</b> PlanBench-VL Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2025年5月19日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT">
+    <span class="PlanGPT" style="vertical-align: middle">PlanGPT应用</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          占个坑
+        </h2>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT" id="PlanGPT-VL">
+    <span class="PlanGPT" style="vertical-align: middle">PlanGPT-VL</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          PlanGPT-VL: Enhancing Urban Planning with Domain-Specific Vision-Language Models
+        </h2>
+        <div class="has-text-right" style="display: flex; justify-content: center; margin: 2vh 0;">
+          <div style="background-color: #f9f9f9; border-left: 4px solid #3273dc; padding: 1em 1.5em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); max-width: 800px; text-align: center;">
+            <p class="is-size-6" style="font-style: normal; margin: 0; color: black; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;">
+              <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K" target="_blank">PlanGPT-VL</a>已正式在Modelscope平台开源，并同步开放<a href="https://modelscope.cn/studios/chichi56/PlanGPT-VL/summary" target="_blank">测试通道</a>，欢迎试用与反馈。
+            </p>
+          </div>
+        </div>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2505.14481"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+                <a href="https://behavioral-spatial-ai-lab.github.io/plangpt-vl/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span>🔗主页</span>
+                </a>
+            </span>
+            <span class="link-block">
+              <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K/files"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>Model</span>
+              </a>
+            </span>
+          </div>
+        </div>
+            <h3 class="title is-4">摘要</h3>
+            <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              尽管城市规划地图对规划专业人员和教育工作者至关重要，但现有视觉-语言模型（VLMs）在解读和评估这类专业地图时往往表现欠佳。这些规划地图通过可视化呈现土地用途、基础设施布局和功能分区等关键信息，理解它们需要特定领域知识，而普通VLMs通常缺乏这种专业能力。针对这一问题，我们开发了PlanGPT-VL，这是首个专为城市规划地图设计的领域特定视觉-语言模型，具有三大创新：(1)PlanAnno-V框架：用于生成高质量规划地图视觉问答数据；(2)关键点思维机制：通过结构化验证方法有效减少模型幻觉；(3)PlanBench-V评测基准：首个全面评估规划地图理解能力的系统测试标准。实验结果显示，与开源和商业VLMs相比，PlanGPT-VL在专业规划任务上的平均性能提升了59.2%。值得注意的是，尽管我们的模型仅有70亿参数，属于轻量级规模，但其表现已能媲美超过720亿参数的大型模型，为城市规划师提供了一个既可靠又具高事实准确性的专业地图分析工具。<br>
+            </p>
+            </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/planannoV.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 4:</b> PlanGPT-VL Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2025年5月19日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT">
+    <span class="PlanGPT" style="vertical-align: middle">上海量子城市</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          占个坑
+        </h2>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT" id="数据合成技术研究">
+    <span class="PlanGPT" style="vertical-align: middle">数据合成技术研究</span>
+  </h1>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          FANNO: Augmenting High-Quality Instruction Data with Open-Sourced LLMs Only
+        </h2>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2408.01323"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/zhuchichi56/fanno.github.io"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>🔗主页</span>
+                </a>
+            </span>
+          </div>
+        </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic is_centered">
+            Accepted by ACL 2025 Findings
+          </p>
+        </div>
+            <h3 class="title is-4">摘要</h3>
+            <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              指令微调作为利用大规模语言模型（LLM）提升任务性能的重要进展，然而，指令数据集的标注传统上是一项既昂贵又繁琐的过程，通常依赖于手动标注或昂贵的专有LLM API调用。为了解决这些挑战，我们提出了FANNO，一个完全自主且开源的框架，彻底革新了标注过程，无需预先存在的标注数据。FANNO利用Mistral-7b-instruct模型，通过文档预筛选、指令生成和响应生成等结构化过程，高效地生成多样且高质量的数据集。通过在Open LLM Leaderboard和AlpacaEval基准测试上的实验结果表明，FANNO能够免费生成与人工标注或经过清理的数据集（如Alpaca-GPT4-Cleaned）相当的高质量、多样性和复杂度的数据。
+            </p>
+            </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/fanno.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 5:</b> FANNO Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2024年8月2日
+          </p>
+        </div>
+        <!-- 分割线 -->
+        <hr style="border: 1px solid #ddd; margin: 40px 0;">
+        
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          Tag-Instruct: Controlled Instruction Complexity Enhancement through Structure-based Augmentation
+        </h2>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://github.com/sustech-nlp/Tag-Instruct/blob/main/tag_instruct_acl25_arixv.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>PDF</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/sustech-nlp/Tag-Instruct"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>🔗主页</span>
+                </a>
+            </span>
+          </div>
+        </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic is_centered">
+            Accepted by ACL 2025 Findings
+          </p>
+        </div>
+            <h3 class="title is-4">摘要</h3>
+            <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              高质量的指令数据对开发大规模语言模型（LLM）至关重要，但现有方法在有效控制指令复杂度方面存在困难。我们提出了TAG-INSTRUCT，这是一个通过结构化语义压缩和受控难度增强来提升指令复杂度的新框架。与以前基于提示的方法（直接处理原始文本）不同，TAG-INSTRUCT将指令压缩到一个紧凑的标签空间，并通过强化学习引导的标签扩展系统地增强复杂度。通过广泛的实验，我们展示了TAG-INSTRUCT在指令复杂度增强方面优于现有方法。我们的分析表明，在标签空间中操作提供了更优的可控性和稳定性，适用于不同的指令合成框架。
+            </p>
+            </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/tag-instruct.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 6:</b> Tag-Instruct Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2025年5月8日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT" id="类脑空间智能：位置编码赋能大模型">
+    <span class="PlanGPT" style="vertical-align: middle">类脑空间智能：位置编码赋能大模型</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          GridPE: Unifying Positional Encoding in Transformers with a Grid Cell-Inspired Framework
+        </h2>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2406.07049"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <!-- <span class="link-block">
+              <a href="https://wangqianxu7.github.io/demo_show/"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span>🔗主页</span>
+                </a>
+            </span> -->
+          </div>
+        </div>
+            <h3 class="title is-4">摘要</h3>
+            <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              理解空间位置和关系是现代人工智能系统的基本能力。人类空间认知的研究为这一领域提供了宝贵的指导。神经科学的发现突出了网格细胞在空间表征中的重要作用，包括距离计算、路径整合和尺度辨识。本文介绍了一种新颖的位置编码方案，灵感来源于傅里叶分析以及最新的计算神经科学关于网格细胞的研究成果。假设网格细胞通过傅里叶基函数的总和来编码空间位置，我们展示了在内积计算过程中，网格表示具有平移不变性。此外，我们基于生物学效率原理推导出了多维欧几里得空间的最优网格尺度比率。利用这些计算原理，我们开发了一种受网格细胞启发的位置编码技术，称为GridPE，用于高维空间中的位置编码。我们将GridPE集成到金字塔视觉变换器架构中。我们的理论分析表明，GridPE为任意高维空间中的位置编码提供了统一的框架。实验结果表明，GridPE显著提升了变换器的性能，强调了将神经科学洞察力融入人工智能系统设计的重要性。
+            </p>
+            </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/GridPE.png" alt="Teaser" width="95%"
+                  style="margin:0 auto">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 7:</b> GridPE Architecture.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2024年6月11日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT", id="生活圈大模型">
+    <span class="PlanGPT" style="vertical-align: middle">生活圈大模型</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          大语言模型助力社区生活圈规划与治理研究
+        </h2>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic is_centered">
+            即将刊登在《上海城市规划》
+          </p>
+        </div>
+            <!-- <div class="column has-text-centered">
+              <img class="columns is-centered has-text-centered" src="./pictures/方元问问.png" alt="Teaser" width="65%"
+                      style="margin:0 auto">
+            </div> -->
+        <h3 class="title is-4">摘要</h3>
+          <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              围绕生活圈规划与社区治理，LLM 可在以下关键环节中发挥赋能作用。首先，通过自然语言交互，LLM 可理解居民在不同情境下的真实诉求，自动从聊天记录、问卷文本、社交平台评论中提取需求主题与情感倾向，实现需求的自动归类与优先级排序，破解居民需求异质性高与表达方式非结构化之间矛盾所带来的精准服务供给困难。其次，LLM 能够将来自传感器网络、社区GIS、人口统计、政务服务平台等的数据进行语义整合与关系建模，提升数据间的可解释性与可操作性，为生活圈的功能评估、资源配置与空间优化提供支撑。同时，在社区协同治理过程中，LLM 可充当“中介智能体”，支持居民与街道办、物业、企业等多元主体之间的语义桥接，辅助完成政策解释、议题协商、共识生成等过程，提升协同效率与满意度。
+            </p>
+          </div>
+        <h3 class="title is-4">技术架构</h3>
+          <div class="columns is-centered">
+            <div class="column is-narrow has-text-centered">
+              <img src="./pictures/grid_rag.png" alt="Teaser" width="85%" style="margin: 0 auto;">
+              <figcaption>
+                <p style="text-align: center;">
+                  <font color="061E61"><b>Figure 8:</b> 地理邻近性增强的多模态RAG框架.</font>
+                </p>
+              </figcaption>
+            </div>
+          </div>
+          <div class="content has-text-justified" style="line-height: 2;">
+            <p>
+              由实验室李博洋与黄诺贤研发的微信小程序“方元问问”部分实现了上述大模型助理生活圈规划与治理的场景，聚焦在针对社区居民和商家的公共服务设施信息智能助手，目前已经在深圳市南头古城社区展开试运行与落地实验。该应用通过微信小程序的自然语言交互，结合社区的地理信息与多模态数据，实现了对社区公共服务设施的智能查询与推荐，为社区居民提供了便捷的服务导航与咨询。同时，该应用还支持社区居民与商家之间的信息共享与交易，为社区的公共服务设施管理与运营提供了支持。<br>
+            </p>
+          </div>
+          <img class="columns is-centered has-text-centered" src="./pictures/fangyuanwenwen.png" alt="Teaser" width="75%"
+                  style="margin:0 auto">
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 9:</b> “方元问问”社区应用场景示例.
+                </font>
+              </p>
+            </figcaption>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 发布日期：2024年8月26日
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .image-row {
+      display: center; /* Use flexbox layout */
+  }
+  .image-row img {
+      width: 40%; /* Each image takes up 50% of the width */
+  }
+</style>
+
+<div class="container mt-6">
+  <div class="content">
+    <h3 class="title is-4">实验室成员</h3>
+    <div class="thanks-content" style="width: 100%;">
+      <div class="thanks-text" style="line-height: 3;">
+        <p style="font-size: 16px;">
+          朱赫，陈旻歆，邓奕杰，苏军又，王稳，王雨润，武钰林，牛彩澄，陆天华，刘程程，李博洋，黄诺贤，蔡迎儿，魏玥，杨思正，牛璐瑶，顾嘉钰，邹宇晗，安枫泓，查思齐，邓闯，李瀚滢，郑宏舟，王琦
+        </p>
+      </div>
+    </div>
+    <div class="image-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; align-items: center;">
+      <div class="thanks-image" style="flex: 1 1 200px; max-width: 300px;">
+        <img src="./pictures/BSAI.png" alt="BSAI" style="width: 100%; height: auto; object-fit: contain;">
+      </div>
+      <div class="thanks-image" style="flex: 1 1 200px; max-width: 300px;">
+        <img src="./pictures/caup.png" alt="CAUP" style="width: 100%; height: auto; object-fit: contain;">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- @PAN TODO: bibtex -->
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>
+      @misc{meng2024PlanGPTmultimodalmultiimageunderstanding,
+        title={PlanGPT: Multimodal Multi-image Understanding for Evaluating Large Vision-Language Models}, 
+        author={Fanqing Meng and Jin Wang and Chuanhao Li and Quanfeng Lu and Hao Tian and Jiaqi Liao and Xizhou Zhu and Jifeng Dai and Yu Qiao and Ping Luo and Kaipeng Zhang and Wenqi Shao},
+        year={2024},
+        eprint={2408.02718},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2408.02718}, 
+  }
+</code></pre>
+  </div>
+</section> -->
+
+<!-- <footer class="footer" style="height: 50px; padding-top: 0px; padding-bottom: 0px;">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is website adapted from <a href="https://github.com/OpenGVLab/MMT-Bench">MMT-Bench</a>, <a href="https://mmmu-benchmark.github.io/">MMMU</a>, <a href="https://mathvista.github.io/">MathVista</a> and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+</footer> -->
+
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+
+  h1.maintitle {
+    font-size: 2.5rem !important; /* 大标题 */
+    font-weight: bold;
+    color:black;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+
+  .publication-links .link-block {
+    margin: 0 0.5rem;
+    display: inline-block;
+  }
+  #toggleButton {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    color: #555555;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition-duration: 0.4s;
+  }
+
+  #toggleButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* 鼠标悬停时的阴影效果 */
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+
+  th, td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  th {
+      background-color: #f2f2f2;
+      border-bottom: 2px solid #ddd;
+  }
+
+  td:hover {background-color: #ffffff;}
+
+.thanks-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* 允许在小屏幕自动换行 */
+  gap: 20px; /* 保持元素之间的间距 */
+}
+
+.thanks-text {
+  max-width: calc(100% - 120px); /* 图片宽度+间距 */
+  flex: 1 1 300px; /* 文字容器也具有弹性 */
+}
+
+.thanks-image img {
+  width: 400px;
+  height: auto;
+}
+
+/* ---------- 手机端样式 ---------- */
+@media screen and (max-width: 768px) {
+  .thanks-content {
+    flex-direction: column; /* 垂直排列文字和图片 */
+    align-items: flex-start; /* 左对齐内容 */
+    gap: 1px; /* 减小间距 */
+  }
+
+  .thanks-text {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .thanks-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1.title{
+    font-size: 1.5rem !important; /* 手机端更小字体，更适合阅读 */
+    font-weight: bold;
+  }
+  
+  h1.maintitle{
+    font-size: 1.9rem !important; /* 手机端更小字体，更适合阅读 */
+    font-weight: bold;
+    color:black;
+  }
+
+  h2.publication-subtitle {
+    font-size: 1.2rem !important; /* 手机端更小字体，更适合阅读 */
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2{
+    font-size: 1rem;
+  }
+  
+  .news-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 8px;
+    gap: 3px;
+  }
+
+  .date {
+    flex: 0 0 15%; /* 固定占15%宽度 */
+    white-space: nowrap;
+    display: inline !important;
+    margin-bottom: 0 !important;
+    font-size: 0.8rem !important;
+  }
+
+  .news-text {
+    flex: 1 1 85%; /* 占85%，允许换行 */
+    word-break: break-word;
+    display: inline !important;
+    margin-bottom: 0 !important;
+    font-size: 0.8rem !important;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+  }
+
+  p.post{
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem; /* 可根据需要调整为更大的值，如1.5rem、2rem等 */
+  }
+
+  .content ul {
+    font-size: 0.8rem;
+  }
+
+  figure img {
+    width: 100% !important;
+  }
+
+  figcaption {
+    font-size: 0.5rem !important;
+    text-align: center;
+  }
+}
+
+
+</style>
+
+<script>
+  window.onload = function() {
+    history.replaceState("", document.title, window.location.pathname + window.location.search);
+  };
+</script>
+
+  <script>
+    // 初始化 Bulma 的 dropdown
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(($dropdown) => {
+        $dropdown.addEventListener('click', () => {
+          const $menu = $dropdown.querySelector('.dropdown-menu');
+          $menu.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
