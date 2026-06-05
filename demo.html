@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>提升空间认知与决策能力的规划大模型（PlanGPT系列）</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/bulma.min.css">
   <link rel="stylesheet" href="./css/bulma-carousel.min.css">
@@ -30,33 +30,11 @@
       top: 4rem;
     }
 
-  .news-item {
-    display: flex;
-    align-items: baseline;
-    margin-bottom: 8px;
-    gap: 7px;
-  }
-
-  .date {
-    flex-shrink: 0;
-    display: inline-block;
-    width: 120px; /* 固定宽度确保日期部分对齐 */
-    margin-right: 10px; /* 日期和文本之间的间距 */
-  }
-
-  .news-text {
-    display: inline;
-    flex-grow: 1;
-  }
-
-  p {
-    margin: 0;
-  }
   </style>
 </head>
 
 <body>
-  <section class="section">
+  <section class="section page-shell">
     <div class="container">
       <div class="columns">
         
@@ -97,30 +75,49 @@
         <!-- 右侧内容 -->
         <div class="column is-10">
 
-<section class="hero">
+<section class="hero site-hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="maintitle is-1 publication-title is-bold">
-            <span class="PlanGPT" style="vertical-align: middle">提升空间认知与决策能力的规划大模型<br>（PlanGPT系列）</span>
+            <span class="PlanGPT" style="vertical-align: middle">提升空间认知与决策能力的<br>规划大模型（PlanGPT系列）</span>
             </h1>
+          <p class="hero-kicker">PlanGPT Series</p>
+          <p class="hero-subtitle">规划模型、评测基准与开放数据。</p>
+          <div class="publication-links hero-links">
+            <span class="link-block">
+              <a href="#PlanGPT-1/1.5" class="external-link button is-normal is-rounded is-dark">
+                <span>PlanGPT</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#PlanBench规划知识基准" class="external-link button is-normal is-rounded is-dark">
+                <span>PlanBench</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#PlanGPT-VL" class="external-link button is-normal is-rounded is-dark">
+                <span>PlanGPT-VL</span>
+              </a>
+            </span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section news-section">
   <div class="container" style="margin-bottom: 2vh;">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="subtitle is-3">News</h2>
+        <h2 class="subtitle is-3">🔥 News</h2>
         <div class="content has-text-justified">
           <div class="news-item">
             <span class="date is-size-6 has-text-grey is-italic">[2026-06-05]</span>
-            <span class="news-text">PlanBench 正式测试数据已在 <a href="https://huggingface.co/datasets/chichi56/PlanBench" target="_blank">Hugging Face</a> 公开发布，代码同步开放在 <a href="https://github.com/zhuchichi56/PlanBench" target="_blank">GitHub</a>.</span>
+            <span class="news-text">PlanBench 测试数据与代码已发布.</span>
           </div>
           <div class="news-item">
             <span class="date is-size-6 has-text-grey is-italic">[2026-06-04]</span>
@@ -128,11 +125,11 @@
           </div>
           <div class="news-item">
             <span class="date is-size-6 has-text-grey is-italic">[2025-05-20]</span>
-            <span class="news-text">PlanGPT-VL 已正式在 <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K" target="_blank">ModelScope</a> 平台开源，并同步开放测试通道.</span>
+            <span class="news-text">PlanGPT-VL 模型已在 <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K" target="_blank">ModelScope</a> 开源；代码在 <a href="https://github.com/zhuchichi56/PlanGPT-VL" target="_blank">GitHub</a>.</span>
           </div>
           <div class="news-item">
             <span class="date is-size-6 has-text-grey is-italic">[2025-05-09]</span>
-            <span class="news-text">PlanGPT-1.5 被 ACL 2025 Industry Track 接收，并获得 Oral Presentation 机会.</span>
+            <span class="news-text">PlanGPT-1.5 被 ACL 2025 Industry Track 接收为 Oral.</span>
           </div>
         </div>
       </div>
@@ -171,9 +168,21 @@
               </a>
             </span>
             <span class="link-block">
-              <a href="https://behavioral-spatial-ai-lab.github.io/"
+              <a href="https://huggingface.co/spaces/chichi56/PlanGPT"
                   class="external-link button is-normal is-rounded is-dark">
-                <span>🔗主页</span>
+                <span class="icon">
+                    <i class="fas fa-rocket"></i>
+                </span>
+                <span>Space</span>
+                </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/sustech-nlp/FANNO/tree/main"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>FANNO</span>
                 </a>
             </span>
           </div>
@@ -265,6 +274,15 @@
                 <span>代码</span>
                 </a>
             </span>
+            <span class="link-block">
+              <a href="./planbench-blog.html"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-blog"></i>
+                </span>
+                <span>博客</span>
+                </a>
+            </span>
           </div>
         </div>
             <h3 class="title is-4">摘要</h3>
@@ -346,6 +364,15 @@
                 <span>代码</span>
                 </a>
             </span>
+            <span class="link-block">
+              <a href="./planbench-blog.html"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-blog"></i>
+                </span>
+                <span>博客</span>
+                </a>
+            </span>
           </div>
         </div>
             <h3 class="title is-4">摘要</h3>
@@ -417,12 +444,17 @@
         <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
           PlanGPT-VL: Enhancing Urban Planning with Domain-Specific Vision-Language Models
         </h2>
-        <div class="has-text-right" style="display: flex; justify-content: center; margin: 2vh 0;">
-          <div style="background-color: #f9f9f9; border-left: 4px solid #3273dc; padding: 1em 1.5em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); max-width: 800px; text-align: center;">
-            <p class="is-size-6" style="font-style: normal; margin: 0; color: black; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;">
-              <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K" target="_blank">PlanGPT-VL</a>已正式在Modelscope平台开源，并同步开放<a href="https://modelscope.cn/studios/chichi56/PlanGPT-VL/summary" target="_blank">测试通道</a>，欢迎试用与反馈。
-            </p>
-          </div>
+        <div class="publication-authors project-authors">
+          <span class="author-block">He Zhu*, Junyou Su*, Minxin Chen*, Wen Wang, Yijie Deng, Guanhua Chen, Wenjia Zhang†</span>
+        </div>
+        <div class="publication-authors project-affiliations">
+          <span class="author-block">同济大学 Behavioral and Spatial AI Lab</span>
+          <span class="author-block">北京大学 Behavioral and Spatial AI Lab</span>
+          <span class="author-block">南方科技大学</span>
+          <span class="author-block">同济大学建筑与城市规划学院</span>
+        </div>
+        <div class="project-note">
+          <b>News:</b> PlanGPT-VL 已正式在 <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K" target="_blank">ModelScope</a> 平台开源。此前测试通道已关闭；代码开放在 <a href="https://github.com/zhuchichi56/PlanGPT-VL" target="_blank">GitHub</a>。
         </div>
         <div class="column has-text-centered">
           <div class="publication-links">
@@ -445,6 +477,15 @@
               <a href="https://modelscope.cn/models/chichi56/plangpt-VL-10K/files"
                   class="external-link button is-normal is-rounded is-dark">
                 <span>Model</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/zhuchichi56/PlanGPT-VL"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>代码</span>
               </a>
             </span>
           </div>
@@ -1004,6 +1045,96 @@
   }
 }
 
+
+  .site-hero h1.maintitle,
+  .site-hero h1.maintitle span {
+    color: #0f172a !important;
+    white-space: normal !important;
+  }
+
+  .site-hero .container,
+  .site-hero .columns,
+  .site-hero .column {
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    .site-hero .container,
+    .news-section .container {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      margin-left: calc(50% - 50vw) !important;
+      margin-right: calc(50% - 50vw) !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    h1.maintitle {
+      font-size: 1rem !important;
+      line-height: 1.16 !important;
+      white-space: normal !important;
+      overflow-wrap: break-word !important;
+      word-break: break-word !important;
+      width: calc(100vw - 2rem) !important;
+      max-width: calc(100vw - 2rem) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    h1.maintitle span {
+      display: block;
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: break-word !important;
+    }
+
+    .hero-links {
+      display: grid !important;
+      grid-template-columns: 1fr;
+      max-width: 220px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-links .link-block,
+    .hero-links .button {
+      width: 100%;
+    }
+
+    .news-item {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      width: calc(100vw - 2rem) !important;
+      max-width: calc(100vw - 2rem) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    .date,
+    .news-text {
+      display: block !important;
+      width: auto !important;
+      flex: none !important;
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: break-word !important;
+      font-size: 0.72rem !important;
+    }
+
+    .hero-subtitle,
+    .news-section .content,
+    .news-section .column {
+      width: calc(100vw - 2rem) !important;
+      max-width: calc(100vw - 2rem) !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      white-space: normal !important;
+      overflow-wrap: anywhere !important;
+      word-break: break-word !important;
+      font-size: 0.82rem !important;
+    }
+  }
 
 </style>
 
