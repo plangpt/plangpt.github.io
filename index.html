@@ -84,6 +84,7 @@
               <li><a href="#PlanBench规划知识基准">PlanBench Planning Knowledge Benchmark</a></li>
               <li><a href="#PlanBench规划图识基准">PlanBench Planning Visual Recognition Benchmark</a></li>
               <li><a href="#PlanGPT-VL">PlanGPT-VL</a></li>
+              <li><a href="#UrbanClaw">UrbanClaw</a></li>
             </ul>
           </aside>
           <!-- <div class="dropdown is-hidden-desktop">
@@ -558,6 +559,91 @@
           <p class="post is-size-6 has-text-grey is-italic">
             <!-- 📅 发布日期：2025年5月19日 -->
             📅 Release Date: May 19, 2025
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+  <h1 class="title is-1 PlanGPT" id="UrbanClaw">
+    <span class="PlanGPT" style="vertical-align: middle">UrbanClaw</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <h2 class="subtitle is-3 publication-subtitle" style="color: black; font-weight: bold;">
+          UrbanClaw: An AI Agent Platform for Urban Planning
+        </h2>
+        <div class="publication-authors">
+          <span class="author-block">He Zhu, Siqi Zha, Minxin Chen, Yijie Deng, Wenjia Zhang†</span>
+        </div>
+        <div class="publication-authors" style="font-size: 1rem; color: #555; margin-top: 0.5rem;">
+          <span class="author-block">Behavioral and Spatial AI Lab, Tongji University</span>
+          <span class="author-block">Behavioral and Spatial AI Lab, Peking University</span>
+          <span class="author-block">College of Architecture and Urban Planning, Tongji University</span>
+        </div>
+        <div class="publication-authors" style="font-size: 0.95rem; color: #555; margin-top: 0.5rem;">
+          <span class="author-block">†Corresponding Author: wenjiazhang@tongji.edu.cn</span>
+        </div>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <span class="link-block">
+              <a class="external-link button is-normal is-rounded is-dark" style="opacity: 0.65; cursor: not-allowed;" onclick="return false;" title="Paper coming soon">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>arXiv (Coming Soon)</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://app.urbanclaw.net/"
+                  class="external-link button is-normal is-rounded is-dark" target="_blank">
+                <span class="icon">
+                    <i class="fas fa-rocket"></i>
+                </span>
+                <span>Live Demo</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/zhuchichi56/urbanClaw"
+                  class="external-link button is-normal is-rounded is-dark" target="_blank">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+        <h3 class="title is-4">Abstract</h3>
+        <div class="content has-text-justified" style="line-height: 2;">
+          <p>
+            UrbanClaw is an AI agent platform tailored for urban and spatial planning. Built around a ReAct agent engine with real-time trace visualization (thinking → tool calls → results → final answer), it equips planners with a full-stack web application, domain-specific benchmarks, and a self-evolving skill system. The platform integrates a Docker sandbox with pre-installed geospatial and data-science packages, multi-provider LLM routing, multi-backend web search, image generation, and a RAG pipeline for planning documents. Through PlanBench, a domain benchmark suite for urban planning (text + vision) with LLM-as-judge scoring, UrbanClaw delivers reliable, end-to-end assistance for real-world planning workflows.
+          </p>
+        </div>
+        <h3 class="title is-4">Platform Overview</h3>
+          <div class="content has-text-justified">
+            <img class="columns is-centered has-text-centered" src="./pictures/urbanclaw.png" alt="UrbanClaw Interface" width="95%"
+                  style="margin:0 auto; border: 1px solid #eee; border-radius: 8px;">
+            <br>
+            <figcaption>
+              <p style="text-align: center;">
+                <font color="061E61">
+                    <b>Figure 5:</b> UrbanClaw interface — ReAct agent trace alongside a generated planning canvas document.
+                </font>
+              </p>
+            </figcaption>
+          </div>
+        <div class="has-text-right mt-4">
+          <p class="post is-size-6 has-text-grey is-italic">
+            📅 Paper coming soon
           </p>
         </div>
       </div>
